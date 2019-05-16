@@ -23,7 +23,7 @@ public class PersistenceConfig {
 	public DataSource datasource() {
 		DriverManagerDataSource ds = new DriverManagerDataSource();
 		ds.setDriverClassName("com.mysql.jdbc.Driver");
-		ds.setUrl("jdbc:mysql://localhost:3306/springMVC?serverTimezone=UTC");
+		ds.setUrl("jdbc:mysql://localhost:3306/pizzaria?serverTimezone=UTC");
 		ds.setUsername("root");
 		ds.setPassword("91602097");
 		return ds;
