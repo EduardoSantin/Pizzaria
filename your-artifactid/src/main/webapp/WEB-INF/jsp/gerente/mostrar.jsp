@@ -10,7 +10,7 @@
 <body>
 
 	<c:forEach var="g" items="${gerentes}">
-	<br>${g.codigo} - ${g.nome} - ${g.endereco} - ${g.cnpj}
+	<br>${g.codigo} - ${g.nome} - ${g.endereco} - ${g.CNPJ}
 	</c:forEach>
 
 </body>
