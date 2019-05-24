@@ -1,23 +1,30 @@
 package br.edu.unoesc.controller;
 
-import javax.naming.spi.DirStateFactory.Result;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping("/login")
-//@WebServlet("/LoginController")
 public class LoginController {
-
-	private final Result result;
 	
-	protected LoginController() {
-		this(null);
+	@RequestMapping(path = { "", "/" })
+	public String login() {
+		return "login/login";
 	}
-
-	public LoginController(Result result) {
+	
+	public ModelAndView menu(HttpServletRequest request, HttpServletResponse response) {
+		String admin = request.getParameter("login");
+		String senha = request.getParameter("senha");
 		
+		if(admin.equals("admin")&& senha.equals("admin")) {
+			return new ModelAndView("menu");
+		}else {
+			return new ModelAndView("errorPage");
+		}
 		
 	}
 	

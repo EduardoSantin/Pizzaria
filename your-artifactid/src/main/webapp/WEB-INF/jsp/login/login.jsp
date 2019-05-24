@@ -13,17 +13,17 @@
 <div class="container-fluid conteudo">
 		<div class="row">
 			<div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6 ">
-				<form class="form-container" action='LoginController' method="post">
+				<form class="form-container" action='menu' method="post">
 					<div class="page-header text-center">
 						<h1>Login</h1>
 					</div>
 					<div class="form-group">
 						<label for="admin">Email</label>
-						<input type="text" class="form-control" id="login" placeholder="Admin" required="required">
+						<input type="text" class="form-control" id="login" name="login" placeholder="Admin" required="required">
 					</div>
 					<div class="form-group">
 						<label for="password">Password</label>
-						<input type="password" class="form-control" id="senha" placeholder="Password" required="required">
+						<input type="password" class="form-control" id="senha" name="senha" placeholder="Password" required="required">
 					</div>
 					<div class="checkbox">
 						<label>
