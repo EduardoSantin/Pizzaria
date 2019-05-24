@@ -25,7 +25,8 @@ public class PersistenceConfig {
 		ds.setDriverClassName("com.mysql.jdbc.Driver");
 		ds.setUrl("jdbc:mysql://localhost:3306/pizzaria?serverTimezone=UTC");
 		ds.setUsername("root");
-		ds.setPassword("root");
+//		ds.setPassword("root");
+
 		return ds;
 	}
 
