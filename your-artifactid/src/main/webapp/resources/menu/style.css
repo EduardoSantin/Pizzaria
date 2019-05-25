@@ -1,0 +1,112 @@
+body{
+	font-family: sans-serif;
+
+}
+.row{
+	margin-left: 10%;
+	margin-right: 10%;
+}
+.navbar-collapse .navbar-nav{
+	float: right;	
+	
+}
+
+header {
+    background-image: url('../image/banner.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 400px;
+    margin-top: -20px;
+}
+
+header h3{
+	color: #fff;
+	margin-top: -5px;	
+}
+
+section{
+	background-image: url('../image/lateral.png');
+	margin-bottom: 20px;
+}
+.text-capitalize{
+	color: #000;
+	margin-top: 30px;
+	margin-bottom:30px;
+}
+.produto img{
+	padding: 12px;
+	border-radius: 20px;
+}
+.box-produtos{
+	background-color: #fff;
+	border-radius: 5px;
+}
+.box-produtos:nth-child(8){
+      margin-bottom: 40px;
+}
+.descricao strong{
+	color: 	#228B22;
+	font-size: 20px;
+
+}
+.descricao h3{
+	font-size: 30px;
+	color: #000;
+}
+/*footer*/
+.footer-classic{
+	background: #2d3246;
+}
+.footer-classic .container .sobre{
+	padding-top: 80px;	
+}
+.context-dark{
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.footer-classic a, .footer-classic a:focus, .footer-classic a:active {
+    color: #ffffff;
+}
+.nav-list li {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.nav-list li a:hover:before {
+    margin-left: 0;
+    opacity: 1;
+    visibility: visible;
+}
+
+ul, ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.social-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 23px;
+    font: 900 13px/1 "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+}
+.social-container .col {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.nav-list li a:before {
+    content: "\f14f";
+    font: 400 21px/1 "Material Design Icons";
+    color: #4d6de6;
+    display: inline-block;
+    vertical-align: baseline;
+    margin-left: -28px;
+    margin-right: 7px;
+    opacity: 0;
+    visibility: hidden;
+    transition: .22s ease;
+}

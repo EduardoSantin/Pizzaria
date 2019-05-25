@@ -13,7 +13,7 @@
 <div class="container-fluid conteudo">
 		<div class="row">
 			<div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6 ">
-				<form class="form-container" action='menu' method="post">
+				<form class="form-container" action="menu"  method="post">
 					<div class="page-header text-center">
 						<h1>Login</h1>
 					</div>

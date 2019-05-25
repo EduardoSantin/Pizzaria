@@ -5,7 +5,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
+
 
 @Controller
 @RequestMapping("/login")
@@ -16,14 +16,14 @@ public class LoginController {
 		return "login/login";
 	}
 	
-	public ModelAndView menu(HttpServletRequest request, HttpServletResponse response) {
+	public String log(HttpServletRequest request, HttpServletResponse response) {
 		String admin = request.getParameter("login");
 		String senha = request.getParameter("senha");
 		
-		if(admin.equals("admin")&& senha.equals("admin")) {
-			return new ModelAndView("menu");
+		if("admin".equals(admin) && "admin".equals(senha)) {
+			return "menu/menu";
 		}else {
-			return new ModelAndView("errorPage");
+			return "login/erro";
 		}
 		
 	}
