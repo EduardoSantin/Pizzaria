@@ -6,9 +6,10 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Erro ao Logar</title>
+	<link rel="stylesheet" href="<c:url value="/resources/css/bootstrap.css"/>">
 </head>
 <body>
-	<h1>Usuario ou senha Incoreto</h1>
-	<a href = "<c:url value = "/login"/>">Voltar</a>
+		<h3>Usuário e/ou senha incoretos!</h3>
+		<a href = "<c:url value = "/login"/>">Voltar</a>
 </body>
 </html>

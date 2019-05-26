@@ -48,7 +48,7 @@
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Outros <span class="caret"></span></a>
 						<ul class="dropdown-menu">
 							<li><a href="#">Sobre Nós</a></li>
-							<li><a href="<c:url value="/login/login"/>Login Administração/>"></a></li>
+							<li><a href="<c:url value="/login"/>">Login Administração</a></li>
 						</ul>
 					</li>
 				</ul>
