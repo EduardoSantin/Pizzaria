@@ -1,7 +1,18 @@
-body{
-	font-family: sans-serif;
-
+body {
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    color: #4d4d4d;
 }
+
+h1, h2, h3 {
+    margin: 0;
+    font-family: "Roboto Slab", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+}
+h4{
+	font-family: "Roboto Slab", Helvetica, Arial, sans-serif;	
+	font-weight: 550;
+}
+
 .row{
 	margin-left: 10%;
 	margin-right: 10%;
@@ -41,9 +52,13 @@ section{
 .box-produtos{
 	background-color: #fff;
 	border-radius: 5px;
+	padding: 10px;
 }
-.box-produtos:nth-child(8){
+.box-produtos:nth-child(6){
       margin-bottom: 40px;
+}
+.descricao:nth-child(6){
+      margin-bottom: 80px;
 }
 .descricao strong{
 	color: 	#228B22;
