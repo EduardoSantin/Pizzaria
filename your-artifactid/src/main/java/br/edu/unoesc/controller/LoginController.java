@@ -33,7 +33,7 @@ public class LoginController extends HttpServlet{
 		String senha = request.getParameter("senha");
 		
 		if(admin.equals("admin") && senha.equals("admin")) {
-			request.getRequestDispatcher("menu").forward(request, response);
+			request.getRequestDispatcher("cadastroPizza").forward(request, response);
 		} else {
 			request.getRequestDispatcher("erro").forward(request, response);
 		}
