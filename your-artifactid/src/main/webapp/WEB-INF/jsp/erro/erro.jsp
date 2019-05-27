@@ -9,7 +9,9 @@
 	<link rel="stylesheet" href="<c:url value="/resources/css/bootstrap.css"/>">
 </head>
 <body>
+	<div class="container-fluid">
 		<h3>Usuário e/ou senha incoretos!</h3>
 		<a href = "<c:url value = "/login"/>">Voltar</a>
+	</div>
 </body>
 </html>
