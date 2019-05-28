@@ -28,22 +28,8 @@
 				</table>
 			</div>
 			<button type="button" class="btn btn-success btn-xs">
-			<a href="<c:url value = "/cadastroPizza"/>">+</a>
+			<a href="<c:url value = "/mostrar"/>">+</a>
 			</button>
-		</div>
-		<div class="col-xs-12 col-md-6 col-lg-6">
-			<h3>Tamanhos</h3>
-			<div class="table-responsive">
-				<table class="table table-striped">
-				<c:forEach var="t" items="${tamanhos}">
-					<tr>
-						<td>${t.tamanho}</td>
-						<td>${t.valor}</td>
-						<td><button class="btn btn-info btn-sm">Editar</button></td>
-					</tr>
-				</c:forEach>
-				</table>
-			</div>
 		</div>
 	</div>
 

@@ -29,12 +29,35 @@
 		</div>
 		<div class="col-xs-12 col-md-6 col-lg-6">
 			<h4>Nova Pizza</h4>
-			<form action='<c:url value="/cadastroPizza/listar"/>'
-				method="post">
+			<form action='<c:url value="/cadastroPizza/listar"/>' method="post">
 				Nome: <input type="text" name="nome" />
 				<button type="submit" class="btn btn-success btn-sm">Salvar</button>
 			</form>
 		</div>
+		<button id="tamanhosPizza">Mostrar Tamanhos</button>
+
+		<div id="tamanhos"
+			class="col-xs-12 col-md-6 col-lg-offset-1 col-lg-4 col-lg-offset-1"
+			style="display: none;">
+			<h3>Tamanhos</h3>
+			<div class="table-responsive">
+				<table class="table table-striped">
+					<c:forEach var="t" items="${tamanhos}">
+						<tr>
+							<td>${t.tamanho}</td>
+							<td>${t.valor}</td>
+							<td><button class="btn btn-info btn-sm">Editar</button></td>
+						</tr>
+					</c:forEach>
+				</table>
+			</div>
+		</div>
 	</div>
+	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+	<script type="text/javascript">
+		$("#tamanhosPizza").click(function() {
+			$("#tamanhos").show();
+		});
+	</script>
 </body>
 </html>

@@ -18,13 +18,13 @@ public class CadastroPizzaController {
 	@Autowired
 	private CadastroPizzaDAO cadastroPizzaDAO;
 
-	
 	@Autowired
 	private TamanhoPizzaDAO tamanhoPizzaDAO;
-
+	
 	@RequestMapping(path = { "", "/" })
 	public String cadastroPizza(Model model) {
 		model.addAttribute("pizza", cadastroPizzaDAO.findAll());
+		model.addAttribute("tamanhos", tamanhoPizzaDAO.findAll());
 		return "cadastroPizza/CadastroPizza";
 	}
 
