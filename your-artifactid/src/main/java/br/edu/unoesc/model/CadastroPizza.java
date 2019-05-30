@@ -11,7 +11,6 @@ public class CadastroPizza {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Long codigo;
-
 	private String nome;
 
 	public CadastroPizza() {
@@ -22,7 +21,7 @@ public class CadastroPizza {
 		super();
 		this.codigo = codigo;
 		this.nome = nome;
-		
+
 	}
 
 	public Long getCodigo() {
@@ -40,6 +39,5 @@ public class CadastroPizza {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-
 
 }
