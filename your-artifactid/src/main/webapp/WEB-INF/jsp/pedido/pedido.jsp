@@ -28,7 +28,7 @@
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pedido<span class="caret"></span></a>
 							<ul class="dropdown-menu">
-								<li><a href="">Novo Pedido</a></li>
+								<li><a href="#pedido">Novo Pedido</a></li>
 							</ul>
 						</li>
 						<li class="dropdown">
@@ -55,7 +55,7 @@
 		<!-- barra de progresso no pedido cliente -->
 		<div class="progress">
 		  <div class="progress-bar progress-bar-success" style="width: 35%">
-		    <span class="sr-only">35% Complete (success)</span>
+		    <span class="sr-only">50% Complete (success)</span>
 		  </div>
 		</div> 
 		<nav class="navbar bg-info">
@@ -67,11 +67,88 @@
 			</div>
 		</nav>
 	</div>
+	<div id="pedido" class="col-xs-12 col-sm-12 col-md-8">
+		
+				<h3 class="text-center">Faça seu Pedido</h3>
+				<form action='<c:url value="/pedido"/>' method="post">
+					<div class="box col-xs-4 col-sm-3 col-md-3 text-center">
+						<h4>Sabores</h4>
+						<select id="codigoPizza" required="required">
+							<option disabled selected="selected">Selecione</option>
+							<c:forEach items="${pizzas}" var="p">  
+					            <option value="${p.codigo}"> ${p.nome} </option>  
+					        </c:forEach>
+						</select>
+					</div>
+					<div class="box col-xs-4 col-sm-3 col-md-3 text-center">	
+						<h4>Tamanhos</h4>
+						<select id="nomePizza" required="required">
+							<option disabled selected="selected">Selecione</option>
+							<c:forEach items="${tamanhos}" var="t">  
+					            <option value="${t.codigo}">${t.tamanho} - ${t.valor}</option>  
+					        </c:forEach>
+						</select>
+					</div>
+					<div class="box col-xs-4 col-sm-3 col-md-2">
+						<h4>Quantidade</h4>	
+						<div class="input-group spinner text-center">
+						    <input type="number" class="form-control " value="1" max="4" min="1">
+						    <div class="input-group-btn-vertical">
+						      <button class="btn btn-success" type="button"><i class="fa fa-caret-up"></i></button>
+						      <button class="btn btn-danger" type="button"><i class="fa fa-caret-down"></i></button>
+						    </div>
+						</div>
+					</div>
+					<div class="col-xs-12 col-sm-3 col-md-10 text-center">
+						<button type="submit" class="btn btn-info">Adicionar ao Carrinho</button>
+					</div>
+				</form>	
+		</div>
+		<div class="container col-xs-12 col-sm-10 col-md-4">
+			<h3 class="carrinho text-center">Seu Carrinho</h3>
+			<div class="table-responsive">
+				<table class="table table-condensed">
+					<head>
+						<td class="text-center">Sabores</td>
+						<td class="text-center">Tamanho-Valor</td>
+						<td class="text-center">Opções</td>
+					</head>
+					<tbody>
+						<c:forEach var="p" items="${item}">
+							<tr>
+								<td class="text-center">${p.nome}</td>
+								<td class="text-center">${p.tamanho}</td>
+								<td class="text-center">${p.quantidade}</td>
+								<td><a
+								href="<c:url value="/pedido/remover/${p.codigo}"/>"><button
+										class="btn btn-danger btn-sm">Remover</button></a></td>
+							</tr>
+							
+						</c:forEach>
+					
+					</tbody>
+				</table>
+			</div>	
+		</div>	
+		<div class="finalizar col-xs-12 text-center">
+			<button type="button" class="btn btn-success"><a href="<c:url value="/finalizar"/>">Finalizar Pedido</a></button>
+		</div>
+	</div>
 
-	<script src=<c:url value="/resources/js/jquery-1.12.4.min.js"/>></script>
-	<script src=<c:url value="/resources/js/bootstrap.min.js"/>></script>
-
+	<script src="js/jquery-1.12.4.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
 	
+	<script type="text/javascript">
+		(function ($) {
+		  $('.spinner .btn:first-of-type').on('click', function() {
+		    $('.spinner input').val( parseInt($('.spinner input').val(), 10) + 1);
+		  });
+		  $('.spinner .btn:last-of-type').on('click', function() {
+		    $('.spinner input').val( parseInt($('.spinner input').val(), 10) - 1);
+
+		  });
+		})(jQuery);
+	</script>
 
 </body>
 </html>
