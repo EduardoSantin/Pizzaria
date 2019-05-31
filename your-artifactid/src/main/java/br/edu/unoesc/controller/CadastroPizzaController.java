@@ -45,8 +45,8 @@ public class CadastroPizzaController {
 
 	@RequestMapping(path = "/excluir/{codigo}", method = RequestMethod.GET)
 	public String excluir(Long id, Model model) {
-		CadastroPizza pizza = cadastroPizzaDAO.findByCodigo(id);
-		cadastroPizzaDAO.delete(pizza);
+//		CadastroPizza pizza = cadastroPizzaDAO.pizzaSelecionada(id);
+//		cadastroPizzaDAO.delete(pizza);
 		popular(model);
 		return "cadastroPizza/CadastroPizza";
 	}
