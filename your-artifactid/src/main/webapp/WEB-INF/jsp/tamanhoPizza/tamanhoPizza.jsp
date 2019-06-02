@@ -1,12 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Cadastro de Pizza</title>
+<title>Tamanhos e Preços</title>
 <link rel="stylesheet"
 	href="<c:url value="/resources/css/bootstrap.css"/>">
 <link rel="stylesheet" type="text/css"
@@ -22,17 +21,17 @@
 					<button type="button" class="navbar-toggle collapsed"
 						data-toggle="collapse" data-target="#navbar" aria-expanded="false"
 						aria-controls="navbar">
-						<span class="sr-only"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
+						<span class="sr-only"></span> <span class="icon-bar"></span> <span
+							class="icon-bar"></span> <span class="icon-bar"></span>
 					</button>
 				</div>
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
-					<li class="dropdown"><a href="<c:url value="/tamanhoPizza"/>">Preços</a></li>
-					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="caret"></span></a>
+					<li class="dropdown"><a href="<c:url value="/cadastroPizza"/>">Pizzas</a></li>
+					<li class="dropdown"><a href="#" class="dropdown-toggle"
+						data-toggle="dropdown" role="button" aria-haspopup="true"
+						aria-expanded="false"><span class="caret"></span></a>
 						<ul class="dropdown-menu">
 							<li><a href="<c:url value="/menu"/>">Sair</a></li>
 						</ul>
@@ -40,30 +39,28 @@
 			</div>
 		</div>
 	</nav>
-	<div id="pizzas" class="container-fluid text-center col-xs-12 col-md-6 col-lg-6">
-	<h3>Pizzas</h3>
+	<div class="container-fluid text-center col-xs-12 col-md-6 col-lg-offset-1 col-lg-4 col-lg-offset-1">
+		<h3>Preços</h3>
 		<div class="table-responsive">
 			<table class="table table-striped">
-				<c:forEach var="p" items="${pizza}">
+				<c:forEach var="t" items="${tamanhos}">
 					<tr>
-						<td>${p.nome}</td>
+						<td>${t.tamanho}</td>
+						<td>${t.valor}</td>
 						<td><a
-							href="<c:url value = "/cadastroPizza/editar/${p.codigo}"/>"><button
+							href="<c:url value = "/tamanhoPizza/editartamanho/${t.codigo}"/>"><button
 									class="btn btn-info btn-sm">Editar</button></a></td>
-						<td><a
-							href="<c:url value = "/cadastroPizza/excluir/${p.codigo}"/>"><button
-									class="btn btn-danger btn-sm">Excluir</button></a></td>
 					</tr>
 				</c:forEach>
 			</table>
 		</div>
 	</div>
-	<div id="formPizza"
-		class="col-xs-12 col-md-6 col-lg-offset-1 col-lg-4 col-lg-offset-1">
-		<h4>Nova Pizza</h4>
-		<form action='<c:url value="/cadastroPizza/listar"/>' method="post">
-			<input type="hidden" name="codigo" value="${codigo}" />
-			Nome: <input type="text" name="nome" value="${nome}" />
+	<div class="col-xs-12 col-md-6 col-lg-offset-1 col-lg-4 col-lg-offset-1">
+		<h4>Editar Valor</h4>
+		<form action='<c:url value="/tamanhoPizza/listar"/>' method="post">
+			<input type="hidden" name="codigo" value="${codigo}" /> <input
+				type="hidden" name="tamanho" value="${tamanho}" /> Tamanho:
+			${tamanho} - Valor: <input type="text" name="valor" value="${valor}" />
 			<button type="submit" class="btn btn-success btn-sm">Salvar</button>
 		</form>
 	</div>

@@ -31,7 +31,7 @@
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pedido<span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="">Novo Pedido</a></li>
+							<li><a href="<c:url value="pedido"/>">Novo Pedido</a></li>
 						</ul>
 					</li>
 					<li class="dropdown">
