@@ -21,8 +21,10 @@
 					<button type="button" class="navbar-toggle collapsed"
 						data-toggle="collapse" data-target="#navbar" aria-expanded="false"
 						aria-controls="navbar">
-						<span class="sr-only"></span> <span class="icon-bar"></span> <span
-							class="icon-bar"></span> <span class="icon-bar"></span>
+						<span class="sr-only"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
 					</button>
 				</div>
 			</div>
@@ -40,7 +42,7 @@
 		</div>
 	</nav>
 	<div class="container-fluid text-center col-xs-12 col-md-6 col-lg-offset-1 col-lg-4 col-lg-offset-1">
-		<h3>Preços</h3>
+		<h3>Tamanhos</h3>
 		<div class="table-responsive">
 			<table class="table table-striped">
 				<c:forEach var="t" items="${tamanhos}">
@@ -49,21 +51,26 @@
 						<td>${t.valor}</td>
 						<td><a
 							href="<c:url value = "/tamanhoPizza/editartamanho/${t.codigo}"/>"><button
-									class="btn btn-info btn-sm">Editar</button></a></td>
+									class="btn btn-info btn-sm" id="btnEditar">Editar</button></a></td>
+						<td><a
+							href="<c:url value = "/tamanhoPizza/excluirtamanho/${t.codigo}"/>"><button
+									class="btn btn-danger btn-sm" id="btnEditar">Excluir</button></a></td>
 					</tr>
 				</c:forEach>
 			</table>
 		</div>
 	</div>
 	<div class="col-xs-12 col-md-6 col-lg-offset-1 col-lg-4 col-lg-offset-1">
-		<h4>Editar Valor</h4>
+		<h4>Tamanhos</h4>
 		<form action='<c:url value="/tamanhoPizza/listar"/>' method="post">
-			<input type="hidden" name="codigo" value="${codigo}" /> <input
-				type="hidden" name="tamanho" value="${tamanho}" /> Tamanho:
-			${tamanho} - Valor: <input type="text" name="valor" value="${valor}" />
+			<input type="hidden" name="codigo" value="${codigo}" />
+			<label>Tamanho: </label><input type="text" name="tamanho" value="${tamanho}"/>
+			<br>
+			<label>Valor: </label><input type="text" name="valor" value="${valor}" />
 			<button type="submit" class="btn btn-success btn-sm">Salvar</button>
 		</form>
 	</div>
+
 	<script src=<c:url value="/resources/js/jquery-1.12.4.min.js"/>></script>
 	<script src=<c:url value="/resources/js/bootstrap.min.js"/>></script>
 </body>

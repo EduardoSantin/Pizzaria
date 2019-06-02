@@ -41,4 +41,13 @@ public class TamanhoController {
 		model.addAttribute("tamanhos", tamanhoPizzaDao.findAll());
 		return "tamanhoPizza/tamanhoPizza";
 	}
+	
+
+	@RequestMapping(path = "/excluirtamanho/{codigo}", method = RequestMethod.GET)
+	public String excluirtamanho(@PathVariable(name = "codigo") Long codigo, Model model) {
+		TamanhoPizza tamanhoPizza = tamanhoPizzaDao.findByCodigo(codigo);
+		tamanhoPizzaDao.delete(tamanhoPizza);
+		model.addAttribute("tamanhos", tamanhoPizzaDao.findAll());
+		return "tamanhoPizza/tamanhoPizza";
+	}
 }

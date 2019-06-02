@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.google.protobuf.TextFormat.ParseException;
 
 import br.edu.unoesc.dao.CadastroPizzaDAO;
-import br.edu.unoesc.dao.TamanhoPizzaDAO;
 import br.edu.unoesc.model.CadastroPizza;
 
 @Controller
@@ -20,9 +19,6 @@ public class CadastroPizzaController {
 	@Autowired
 	private CadastroPizzaDAO cadastroPizzaDAO;
 
-	@Autowired
-	private TamanhoPizzaDAO tamanhoPizzaDAO;
-
 	@RequestMapping(path = { "", "/" })
 	public String cadastroPizza(Model model) {
 		return caregar(model);
@@ -30,7 +26,6 @@ public class CadastroPizzaController {
 	
 	private String caregar(Model model) {
 		model.addAttribute("pizza", cadastroPizzaDAO.findAll());
-		model.addAttribute("tamanhos", tamanhoPizzaDAO.findAll());
 		return "cadastroPizza/CadastroPizza";
 	}
 
