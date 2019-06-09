@@ -3,23 +3,24 @@ body {
     color: #4d4d4d;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
     margin: 0;
     font-family: "Roboto Slab", Helvetica, Arial, sans-serif;
     font-weight: 600;
+    color: black;
 }
-h4{
-	font-family: "Roboto Slab", Helvetica, Arial, sans-serif;	
-	font-weight: 550;
+.fa-check{
+	color: green;
 }
-
+.fa-clock{
+	color: blue;
+}
 .row{
 	margin-left: 10%;
 	margin-right: 10%;
 }
 .navbar-collapse .navbar-nav{
 	float: right;	
-	
 }
 
 header {
@@ -38,37 +39,26 @@ header h3{
 
 section{
 	background-image: url('../image/lateral.png');
-	margin-bottom: 20px;
 }
-.text-capitalize{
-	color: #000;
+section .produtosDestaque h2{
 	margin-top: 30px;
-	margin-bottom:30px;
 }
-.produto img{
-	padding: 12px;
-	border-radius: 20px;
+section .produtosDestaque .row{
+	margin-bottom: 15px;
+	color: black;
 }
-.box-produtos{
-	background-color: #fff;
-	border-radius: 5px;
-	padding: 10px;
-}
-.box-produtos:nth-child(6){
-      margin-bottom: 40px;
-}
-.descricao:nth-child(6){
-      margin-bottom: 80px;
-}
-.descricao strong{
-	color: 	#228B22;
-	font-size: 20px;
 
+section .produtosDestaque .row .col-sm-5 img{
+	margin-top: 30px;
+	border-radius: 10px;
 }
-.descricao h3{
-	font-size: 30px;
-	color: #000;
+
+section .produtosDestaque .row .bloco h4{
+	margin-top: 10px;
 }
+
+
+
 /*footer*/
 .footer-classic{
 	background: #2d3246;
