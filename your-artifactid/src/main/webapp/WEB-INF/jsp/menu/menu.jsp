@@ -34,8 +34,8 @@
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Minha Conta <span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li><a href="#">Fazer Login</a></li>
-						<li><a href="#">Cadastre-se</a></li>
+						<li><a href="#"><i class="fas fa-user"></i> Fazer Login</a></li>
+						<li><a href="#"><i class="fas fa-database"></i> Cadastre-se</a></li>
 					</ul>
 				</li>
 				<li class="dropdown">
@@ -45,7 +45,7 @@
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Outros <span class="caret"></span></a>
 					<ul class="dropdown-menu">
 						<li><a href="#">Sobre Nós</a></li>
-						<li><a href="<c:url value="/login"/>">Login Adm</a></li>
+						<li><a href="<c:url value="/login"/>"><i class="fas fa-user-tie"></i>  Login Adm</a></li>
 					</ul>
 				</li>
 				<li class="dropdown">
@@ -157,19 +157,19 @@
 				<h2 class="text-capitalize text-center">Nossos Chefes</h2>
 				<div class="row">
 					<div class=" col-sm-4 bloco">
-						<h2 class="text-center">Chefe 1</h2>
+						<h2 class="text-center">Fogaça</h2>
 						<br>
-						<img src=<c:url value="/resources/image/americana.jpg"/> class="img-responsive img-rounded">
+						<img src=<c:url value="/resources/image/fogaca.jpg"/> class="img-responsive img-rounded">
 					</div>
 					<div class=" col-sm-4 bloco">
-						<h2 class="text-center">Chefe 2</h2>
+						<h2 class="text-center">Paola</h2>
 						<br>
-						<img src=<c:url value="/resources/image/americana.jpg"/> class="img-responsive img-rounded">
+						<img src=<c:url value="/resources/image/paola.jpg"/> class="img-responsive img-rounded">
 					</div>
 					<div class=" col-sm-4 bloco">
-						<h2 class="text-center">Chefe 3</h2>
+						<h2 class="text-center">Jacquin</h2>
 						<br>
-						<img src=<c:url value="/resources/image/americana.jpg"/> class="img-responsive 	img-rounded">
+						<img src=<c:url value="/resources/image/jacan.jpg"/> class="img-responsive 	img-rounded">
 					</div>
 				</div>
 			</div>
