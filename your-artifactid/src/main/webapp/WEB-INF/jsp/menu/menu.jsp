@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="ISO-8859-1">
+	<meta charset="UTF-8">
 	<title>Menu</title>
 	<link rel="stylesheet" href="<c:url value="/resources/css/bootstrap.css"/>">
 	<link rel="stylesheet" type="text/css" href="<c:url value="/resources/menu/style.css"/>">
@@ -12,7 +12,7 @@
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto+Slab:400,700|Pacifico' rel='stylesheet' type='text/css'>
 </head>
 <body>
-	<nav class="navbar navbar-default">	
+	<nav class="navbar navbar-default fixed">	
 		<div class="navbar-header">
 			<a class="navbar-brand" href="<c:url value="/menu"/>">Casa Nova</a>
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -28,16 +28,19 @@
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pedido<span class="caret"></span></a>
 					<ul class="dropdown-menu">
 						<li><a href="<c:url value="/pedido"/>">Novo Pedido</a></li>
-					</ul>
-				</li>
-				<li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Lista <span class="caret"></span></a>
-					<ul class="dropdown-menu">
-						<li><a href="#">Pizzas</a></li>
 						<li><a href="#destaque">Destaques</a></li>
 					</ul>
 				</li>
-				
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Minha Conta <span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="#">Fazer Login</a></li>
+						<li><a href="#">Cadastre-se</a></li>
+					</ul>
+				</li>
+				<li class="dropdown">
+					<a href="#chefes">Chefes</a>
+				</li>
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Outros <span class="caret"></span></a>
 					<ul class="dropdown-menu">
@@ -46,7 +49,7 @@
 					</ul>
 				</li>
 				<li class="dropdown">
-					<a href="#contato" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Contato</a>
+					<a href="#contato">Contato</a>
 				</li>
 				
 			</ul>
@@ -149,7 +152,28 @@
 				</div>
 			</div>	
 		</section>
-
+		<section class="col-xs-12">
+			<div class="produtosDestaque col-sm-12" id="chefes">
+				<h2 class="text-capitalize text-center">Nossos Chefes</h2>
+				<div class="row">
+					<div class=" col-sm-4 bloco">
+						<h2 class="text-center">Chefe 1</h2>
+						<br>
+						<img src=<c:url value="/resources/image/americana.jpg"/> class="img-responsive img-rounded">
+					</div>
+					<div class=" col-sm-4 bloco">
+						<h2 class="text-center">Chefe 2</h2>
+						<br>
+						<img src=<c:url value="/resources/image/americana.jpg"/> class="img-responsive img-rounded">
+					</div>
+					<div class=" col-sm-4 bloco">
+						<h2 class="text-center">Chefe 3</h2>
+						<br>
+						<img src=<c:url value="/resources/image/americana.jpg"/> class="img-responsive 	img-rounded">
+					</div>
+				</div>
+			</div>
+		</section>
 	<footer class="section footer-classic context-dark bg-image">
         <div class="container text-center">
           <div class="row">
