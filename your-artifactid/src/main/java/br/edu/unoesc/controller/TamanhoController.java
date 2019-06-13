@@ -36,8 +36,7 @@ public class TamanhoController {
 	public String editartamanho(@PathVariable(name = "codigo") Long codigo, Model model) throws ParseException {
 		TamanhoPizza tamanhopizza = tamanhoPizzaDao.findByCodigo(codigo);
 		model.addAttribute("codigo", tamanhopizza.getCodigo());
-		model.addAttribute("tamanho", tamanhopizza.getTamanho());
-		model.addAttribute("valor", tamanhopizza.getValor());
+		model.addAttribute("tamanhoPizza", tamanhopizza);
 		model.addAttribute("tamanhos", tamanhoPizzaDao.findAll());
 		return "tamanhoPizza/tamanhoPizza";
 	}
