@@ -25,6 +25,7 @@ public class PedidoController {
 	 @Autowired
 	 private PedidoDAO pedidoDao;
 
+
 	@RequestMapping(path= {"", "/" })
 	public String pedido(Model model) {
 		model.addAttribute("pizzas", cadastropizzaDao.findAll());
