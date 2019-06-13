@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.edu.unoesc.dao.CadastroPizzaDAO;
 import br.edu.unoesc.dao.TamanhoPizzaDAO;
-
 @Controller
 @RequestMapping("/pedido")
 public class PedidoController {
@@ -16,6 +15,7 @@ public class PedidoController {
 	 
 	 @Autowired
 	 private TamanhoPizzaDAO tamanhopizzaDao;
+
 
 	@RequestMapping(path= {"", "/" })
 	public String pedido(Model model) {
