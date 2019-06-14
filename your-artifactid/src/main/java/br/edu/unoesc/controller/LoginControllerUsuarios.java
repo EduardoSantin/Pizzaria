@@ -10,7 +10,7 @@ import br.edu.unoesc.dao.UsuarioDAO;
 import br.edu.unoesc.model.Usuario;
 
 @Controller
-@RequestMapping("/usuario")
+@RequestMapping("/user")
 public class LoginControllerUsuarios {
 	
 	@Autowired
@@ -19,12 +19,12 @@ public class LoginControllerUsuarios {
 	
 	@RequestMapping(path = { "", "/" })
 	public String loginForm() {
-		return "usuario/login";
+		return "user/login";
 	}
 	
 	@RequestMapping(path=  "/cadastro")
 	public String cadastro() {
-		return "usuario/cadastro";
+		return "user/cadastro";
 	}
 	
 
@@ -32,12 +32,11 @@ public class LoginControllerUsuarios {
     public String valida(String email, String senha, Model model) {
         Usuario usuario = usuarioDAO.findByLoginSenha(email, senha);
         if (usuario != null) {
-        	String nome = usuario.getNome();
-        	model.addAttribute("usuario" + nome);
+        	model.addAttribute("usuario" + usuario.getNome());
             return "redirect:/pedido";
         } else {
         	model.addAttribute("Erro", "Email ou senha Incorreta!");
-            return "usuario/login";
+            return "user/login";
         }
     }
 	

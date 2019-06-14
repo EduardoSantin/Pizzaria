@@ -15,16 +15,31 @@ import br.edu.unoesc.model.Usuario;
 @RequestMapping("/usuario")
 public class UsuarioController {
 
-	
 	@Autowired
-	private UsuarioDAO usuario;
+	private UsuarioDAO usuariodao;
+	
+	@RequestMapping(path = { "", "/" })
+	public String loginForm(Model model) {
+		return caregar(model);
+	}
+	
+	private String caregar(Model model) {
+		model.addAttribute("usuario", usuariodao.findAll());
+		return "user/login";
+	}
+	
+	@RequestMapping(path = "/salvar", method = RequestMethod.POST)
+	public String salvar(Usuario usuario, Model model) {
+		usuariodao.saveAndFlush(usuario);
+		return caregar(model);
+	}
 	
 
 	@RequestMapping(path = "/excluir/{codigo}", method = RequestMethod.GET)
 	public String excluir(@PathVariable(name = "codigo") Long codigo, Model model) {
-		Usuario user = usuario.findByCodigo(codigo);
-		usuario.delete(user);
+		Usuario user = usuariodao.findByCodigo(codigo);
+		usuariodao.delete(user);
 		
-	 return "usuario/cadastro";
+	 return "user/cadastro";
 	}
 }

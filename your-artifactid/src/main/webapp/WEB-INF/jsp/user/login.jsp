@@ -13,7 +13,7 @@
 <div class="container-fluid conteudo">
 		<div class="row">
 			<div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6 ">
-				<form class="form-container" action="<c:url value="/usuario/valida"/>"  method="post">
+				<form class="form-container" action="<c:url value="/user/valida"/>"  method="post">
 					<div class="page-header text-center">
 						<h1>Login User</h1>
 						<c:if test="${Erro != null}" >
@@ -36,7 +36,7 @@
 						</label>
 					</div>
 					<div class="form-group">
-						<button class="btn btn-default btn-block"><a href="<c:url value="/menu"/>">Cadastre-se</a></button>
+						<button class="btn btn-default btn-block"><a href="<c:url value="/user/cadastro"/>">Cadastre-se</a></button>
 					</div>
 					<button type="submit" class="btn btn-success btn-block">Entrar</button>
 				</form>
