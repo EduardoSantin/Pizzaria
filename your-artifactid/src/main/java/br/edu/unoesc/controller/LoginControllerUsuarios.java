@@ -20,6 +20,12 @@ public class LoginControllerUsuarios {
 	public String loginForm() {
 		return "usuario/login";
 	}
+	
+	@RequestMapping(path=  "/cadastro")
+	public String cadastro() {
+		return "usuario/cadastro";
+	}
+	
 
 	@RequestMapping(value = "/valida", method = RequestMethod.POST)
     public String valida(String email, String senha) {

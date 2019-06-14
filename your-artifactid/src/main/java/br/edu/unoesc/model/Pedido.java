@@ -19,17 +19,23 @@ public class Pedido {
 	private int quantidade;
 
 	private double valorTotal;
+	
+	//codigo estrangeiro para ver os dados do usuario
+	private Long codusuario;
+	
+	// criar um codigo estrangeiro para os dados do tamanho para poder pegar o valor da pizza
 
 	public Pedido() {
 	}
 
-	public Pedido(Long codigo, String sabor, String tamanho, int quantidade, double valorTotal) {
+	public Pedido(Long codigo, String sabor, String tamanho, int quantidade, double valorTotal, Long codusuario) {
 		super();
 		this.codigo = codigo;
 		this.sabor = sabor;
 		this.tamanho = tamanho;
 		this.quantidade = quantidade;
 		this.setValorTotal(valorTotal);
+		this.codusuario = codusuario;
 	}
 
 	public Long getCodigo() {
@@ -70,6 +76,14 @@ public class Pedido {
 
 	public void setValorTotal(double valorTotal) {
 		this.valorTotal = valorTotal;
+	}
+
+	public Long getCodusuario() {
+		return codusuario;
+	}
+
+	public void setCodusuario(Long codusuario) {
+		this.codusuario = codusuario;
 	}
 
 }
