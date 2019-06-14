@@ -2,6 +2,7 @@ package br.edu.unoesc.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -22,13 +23,14 @@ public class LoginControllerUsuarios {
 	}
 
 	@RequestMapping(value = "/valida", method = RequestMethod.POST)
-    public String valida(String email, String senha) {
+    public String valida(String email, String senha, Model model) {
         Usuario usuario = usuarioDAO.findByLoginSenha(email, senha);
         if (usuario != null) {
-        	System.out.println(usuario + " logado");
+        	String nome = usuario.getNome();
+        	model.addAttribute("usuario" + nome);
             return "redirect:/pedido";
         } else {
-        	System.out.println("nao logado");
+        	model.addAttribute("Erro", "Email ou senha Incorreta!");
             return "usuario/login";
         }
     }
