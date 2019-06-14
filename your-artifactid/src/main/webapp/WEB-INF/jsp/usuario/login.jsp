@@ -16,6 +16,11 @@
 				<form class="form-container" action="<c:url value="/usuario/valida"/>"  method="post">
 					<div class="page-header text-center">
 						<h1>Login User</h1>
+						<c:if test="${Erro != null}" >
+							<span class="alert" style="color:red;">
+							${Erro}
+						</span>
+					</c:if>	
 					</div>
 					<div class="form-group">
 						<label for="admin">Email</label>
@@ -29,6 +34,9 @@
 						<label>
 							<input type="checkbox"> Remember me
 						</label>
+					</div>
+					<div class="form-group">
+						<button class="btn btn-default btn-block"><a href="<c:url value="/menu"/>">Cadastre-se</a></button>
 					</div>
 					<button type="submit" class="btn btn-success btn-block">Entrar</button>
 				</form>
