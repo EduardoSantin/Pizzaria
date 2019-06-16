@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Pedido {
@@ -19,23 +20,29 @@ public class Pedido {
 	private int quantidade;
 
 	private double valorTotal;
-	
-	//codigo estrangeiro para ver os dados do usuario
-	private Long codusuario;
-	
-	// criar um codigo estrangeiro para os dados do tamanho para poder pegar o valor da pizza
+
+	// codigo estrangeiro para ver os dados do usuario
+	@ManyToOne
+	private Usuario usuario;
+
+	// criar um codigo estrangeiro para os dados do tamanho para poder pegar o valor
+	// da pizza
+	@ManyToOne
+	private TamanhoPizza tamanhopizza;
 
 	public Pedido() {
 	}
 
-	public Pedido(Long codigo, String sabor, String tamanho, int quantidade, double valorTotal, Long codusuario) {
+	public Pedido(Long codigo, String sabor, String tamanho, int quantidade, double valorTotal, Usuario usuario,
+			TamanhoPizza tamanhopizza) {
 		super();
 		this.codigo = codigo;
 		this.sabor = sabor;
 		this.tamanho = tamanho;
 		this.quantidade = quantidade;
-		this.setValorTotal(valorTotal);
-		this.codusuario = codusuario;
+		this.valorTotal = valorTotal;
+		this.usuario = usuario;
+		this.tamanhopizza = tamanhopizza;
 	}
 
 	public Long getCodigo() {
@@ -78,12 +85,20 @@ public class Pedido {
 		this.valorTotal = valorTotal;
 	}
 
-	public Long getCodusuario() {
-		return codusuario;
+	public Usuario getUsuario() {
+		return usuario;
 	}
 
-	public void setCodusuario(Long codusuario) {
-		this.codusuario = codusuario;
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
+	public TamanhoPizza getTamanhopizza() {
+		return tamanhopizza;
+	}
+
+	public void setTamanhopizza(TamanhoPizza tamanhopizza) {
+		this.tamanhopizza = tamanhopizza;
 	}
 
 }

@@ -62,13 +62,16 @@
 	</div>
 	<div class="col-xs-12 col-md-6 col-lg-offset-1 col-lg-4 col-lg-offset-1">
 		<h4>Tamanhos</h4>
-		<form action='<c:url value="/tamanhoPizza/listar"/>' method="post">
-			<input type="hidden" name="codigo" value="${tamanhoPizza.codigo}" />
-			<label>Tamanho: </label><input type="text" name="tamanho" value="${tamanhoPizza.tamanho}"/>
-			<br>
-			<label>Valor: </label><input type="text" name="valor" value="${tamanhoPizza.valor}" />
-			<button type="submit" class="btn btn-success btn-sm">Salvar</button>
-		</form>
+			<form action='<c:url value="/tamanhoPizza/listar"/>' method="post">
+			<input type="hidden" name="codigo" value="${codigo}" />
+			<div class="form-group">
+				<input type="text" name="tamanho" placeholder="Tamanho:" value="${tamanho}"/>
+			</div>
+			<div class="form-group">
+				<input type="text" name="valor" placeholder="Valor:" value="${valor}" />
+			</div>
+				<button type="submit" class="btn btn-success btn-sm">Salvar</button>
+			</form>
 	</div>
 
 	<script src=<c:url value="/resources/js/jquery-1.12.4.min.js"/>></script>

@@ -94,7 +94,7 @@
 				<select name="tamanho" required="required">
 					<option disabled selected="selected">Selecione</option>
 					<c:forEach items="${tamanhos}" var="t">
-						<option id="tamanho" value="${t.tamanho} - ${t.valor}">${t.tamanho}
+						<option id="tamanho" value="${t.tamanho}">${t.tamanho}
 							- ${t.valor}</option>
 					</c:forEach>
 				</select>
@@ -114,6 +114,7 @@
 					</div>
 				</div>
 			</div>
+			<input type="hidden" name="usuario_codigo" value="${usuario_codigo}">
 			<div class="col-xs-12 col-sm-3 col-md-10 text-center">
 				<button type="submit" class="btn btn-info">Adicionar ao
 					Carrinho</button>

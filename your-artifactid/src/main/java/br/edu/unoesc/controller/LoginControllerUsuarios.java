@@ -32,7 +32,7 @@ public class LoginControllerUsuarios {
     public String valida(String email, String senha, Model model) {
         Usuario usuario = usuarioDAO.findByLoginSenha(email, senha);
         if (usuario != null) {
-        	model.addAttribute("usuario" + usuario.getNome());
+        	model.addAttribute("usuario_codigo", usuario.getCodigo());
             return "redirect:/pedido";
         } else {
         	model.addAttribute("Erro", "Email ou senha Incorreta!");
