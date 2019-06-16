@@ -28,9 +28,10 @@ public class UsuarioController {
 		return "user/login";
 	}
 	
+	
 	@RequestMapping(path = "/salvar", method = RequestMethod.POST)
 	public String salvar(Usuario usuario, Model model) {
-		usuariodao.saveAndFlush(usuario);
+		this.usuariodao.saveAndFlush(usuario);
 		return caregar(model);
 	}
 	

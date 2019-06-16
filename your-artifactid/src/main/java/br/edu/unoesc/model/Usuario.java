@@ -4,13 +4,15 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 
 @Entity
+@Table(name = "usuario")
 public class Usuario {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long codigo;
 	private String nome;
 	private String sobrenome;
@@ -24,6 +26,11 @@ public class Usuario {
 	private String email;
 	private String senha;
 	
+	
+	public Usuario() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	public Usuario(Long codigo, String nome, String sobrenome, String cpf, String telefone, String endereco,
 			String numero, String bairro, String cidade, String uf, String email, String senha) {
 		super();
@@ -40,108 +47,78 @@ public class Usuario {
 		this.email = email;
 		this.senha = senha;
 	}
-
-	public Usuario() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
 	public Long getCodigo() {
 		return codigo;
 	}
-
 	public void setCodigo(Long codigo) {
 		this.codigo = codigo;
 	}
-
 	public String getNome() {
 		return nome;
 	}
-
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-
 	public String getSobrenome() {
 		return sobrenome;
 	}
-
 	public void setSobrenome(String sobrenome) {
 		this.sobrenome = sobrenome;
 	}
-
 	public String getCpf() {
 		return cpf;
 	}
-
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
-
 	public String getTelefone() {
 		return telefone;
 	}
-
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
-
 	public String getEndereco() {
 		return endereco;
 	}
-
 	public void setEndereco(String endereco) {
 		this.endereco = endereco;
 	}
-
 	public String getNumero() {
 		return numero;
 	}
-
 	public void setNumero(String numero) {
 		this.numero = numero;
 	}
-
 	public String getBairro() {
 		return bairro;
 	}
-
 	public void setBairro(String bairro) {
 		this.bairro = bairro;
 	}
-
 	public String getCidade() {
 		return cidade;
 	}
-
 	public void setCidade(String cidade) {
 		this.cidade = cidade;
 	}
-
 	public String getUf() {
 		return uf;
 	}
-
 	public void setUf(String uf) {
 		this.uf = uf;
 	}
-
 	public String getEmail() {
 		return email;
 	}
-
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
 	public String getSenha() {
 		return senha;
 	}
-
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-	
 	
 	
 	
