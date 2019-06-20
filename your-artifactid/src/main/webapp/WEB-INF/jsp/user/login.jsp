@@ -43,6 +43,7 @@
 			</div>
 		</div>
 	</div>
+	<a href="<c:url value="/user/esqueceu"/>">Esqueceu a senha?</a>
 
 </body>
 </html>

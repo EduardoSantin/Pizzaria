@@ -1,5 +1,7 @@
 package br.edu.unoesc.controller;
 
+import java.util.Random;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -40,4 +42,34 @@ public class LoginControllerUsuarios {
         }
     }
 	
+	@RequestMapping(path=  "/esqueceu")
+	public String esqueceuSenha() {
+		return "user/esqueceu";
+	}
+	
+	@RequestMapping(value = "/recuperar", method = RequestMethod.POST)
+    public String recuperar(String email, Model model) {
+		Usuario usuario = usuarioDAO.finByLogin(email);
+		
+		Long codigo = usuario.getCodigo();
+		
+		String senha = GeraSenha().toString();
+
+		usuarioDAO.updateSenha(senha, codigo);
+		
+		return "user/login";
+		
+    }
+	
+	public String GeraSenha() {
+		Random gerador = new Random();
+		for (int i = 0; i < 6; i++) {
+			gerador.nextInt(6);
+		}
+		return gerador.toString();
+	}
+	
+
+	
+ 
 }

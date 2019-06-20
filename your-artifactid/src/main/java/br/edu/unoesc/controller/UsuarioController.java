@@ -35,7 +35,6 @@ public class UsuarioController {
 		return caregar(model);
 	}
 	
-
 	@RequestMapping(path = "/excluir/{codigo}", method = RequestMethod.GET)
 	public String excluir(@PathVariable(name = "codigo") Long codigo, Model model) {
 		Usuario user = usuariodao.findByCodigo(codigo);
