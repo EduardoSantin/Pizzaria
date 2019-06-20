@@ -18,15 +18,15 @@ public class CadastroPizzaController {
 
 	@Autowired
 	private CadastroPizzaDAO cadastroPizzaDAO;
-
-	@RequestMapping(path = { "", "/" })
-	public String cadastroPizza(Model model) {
-		return caregar(model);
-	}
 	
 	private String caregar(Model model) {
 		model.addAttribute("pizza", cadastroPizzaDAO.findAll());
 		return "cadastroPizza/CadastroPizza";
+	}
+
+	@RequestMapping(path = { "", "/" })
+	public String cadastroPizza(Model model) {
+		return caregar(model);
 	}
 
 	@RequestMapping(path = "/listar", method = RequestMethod.POST)

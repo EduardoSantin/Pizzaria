@@ -24,7 +24,7 @@
 					</div>
 					<div class="form-group">
 						<label for="admin">Email</label>
-						<input type="text" class="form-control" id="email" name="email" placeholder="email" required="required">
+						<input type="email" class="form-control" id="email" name="email" placeholder="email" required="required">
 					</div>
 					<div class="form-group">
 						<label for="password">Password</label>

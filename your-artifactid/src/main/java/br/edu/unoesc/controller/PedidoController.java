@@ -24,7 +24,8 @@ public class PedidoController {
 	 
 	 @Autowired
 	 private PedidoDAO pedidoDao;
-
+	 
+	 // ver como popular os campos entrangeiro da tabela pedido do banco
 
 	@RequestMapping(path= {"", "/" })
 	public String pedido(Model model) {

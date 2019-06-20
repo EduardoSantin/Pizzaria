@@ -19,26 +19,28 @@ public class TamanhoController {
 	@Autowired 
 	private TamanhoPizzaDAO tamanhoPizzaDao;
 	
-	@RequestMapping(path = { "", "/" })
-	public String tamanhoPizza(Model model) {
+	private String caregar(Model model) {
 		model.addAttribute("tamanhos", tamanhoPizzaDao.findAll());
 		return "tamanhoPizza/tamanhoPizza";
+	}
+	
+	@RequestMapping(path = { "", "/" })
+	public String tamanhoPizza(Model model) {
+		return caregar(model);
 	}
 
 	@RequestMapping(path = "/listar", method = RequestMethod.POST)
 	public String listar(TamanhoPizza tamanhoPizza, Model model) {
 		tamanhoPizzaDao.saveAndFlush(tamanhoPizza);
-		model.addAttribute("tamanhos", tamanhoPizzaDao.findAll());
-		return "tamanhoPizza/tamanhoPizza";
+		return caregar(model);
 	}
 
 	@RequestMapping(path = "/editartamanho/{codigo}", method = RequestMethod.GET)
 	public String editartamanho(@PathVariable(name = "codigo") Long codigo, Model model) throws ParseException {
 		TamanhoPizza tamanhopizza = tamanhoPizzaDao.findByCodigo(codigo);
 		model.addAttribute("codigo", tamanhopizza.getCodigo());
-		model.addAttribute("tamanhoPizza", tamanhopizza);
-		model.addAttribute("tamanhos", tamanhoPizzaDao.findAll());
-		return "tamanhoPizza/tamanhoPizza";
+		model.addAttribute("tamanhoPizza", tamanhopizza.getTamanho());
+		return caregar(model);
 	}
 	
 
@@ -46,7 +48,6 @@ public class TamanhoController {
 	public String excluirtamanho(@PathVariable(name = "codigo") Long codigo, Model model) {
 		TamanhoPizza tamanhoPizza = tamanhoPizzaDao.findByCodigo(codigo);
 		tamanhoPizzaDao.delete(tamanhoPizza);
-		model.addAttribute("tamanhos", tamanhoPizzaDao.findAll());
-		return "tamanhoPizza/tamanhoPizza";
+		return caregar(model);
 	}
 }
