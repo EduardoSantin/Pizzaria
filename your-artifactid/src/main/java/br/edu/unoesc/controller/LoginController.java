@@ -1,42 +1,27 @@
 package br.edu.unoesc.controller;
 
-import java.io.IOException;
-
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 
 @Controller
 @RequestMapping("/login")
-@WebServlet("/LoginController")
-public class LoginController extends HttpServlet{
-	private static final long serialVersionUID = 1L;
-
-	
-	public LoginController() {
-		super();
-	}
+public class LoginController {
 
 	@RequestMapping(path = { "", "/" })
 	public String login() {
 		return "login/login";
 	}
-	
-	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String admin = request.getParameter("login");
-		String senha = request.getParameter("senha");
-		
-		if(admin.equals("admin") && senha.equals("admin")) {
-			request.getRequestDispatcher("cadastroPizza").forward(request, response);
+	@RequestMapping(value = "/acessar", method = RequestMethod.POST)
+	public String acessar(String login, String senha, Model model) {
+		if(login.equals("admin") && senha.equals("admin")) {
+			return "redirect:/cadastroPizza";
 		} else {
-			request.getRequestDispatcher("erro").forward(request, response);
+			model.addAttribute("Erro", "Email ou senha Incorreta!");
+			return "login/login";
 		}
-		
 	}
+
 }

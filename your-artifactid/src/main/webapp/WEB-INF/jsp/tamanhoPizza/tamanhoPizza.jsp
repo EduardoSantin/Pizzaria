@@ -10,69 +10,108 @@
 	href="<c:url value="/resources/css/bootstrap.css"/>">
 <link rel="stylesheet" type="text/css"
 	href="<c:url value="/resources/menu/style.css"/>">
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+	integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+	crossorigin="anonymous">
 </head>
 <body>
 	<nav class="navbar navbar-default">
-		<div class="row">
-			<div class="navbar-header">
-				<div class="logo">
-					<img src=<c:url value="/resources/image/logo.jpg"/>
-						class="img-responsive col-xs-2">
-					<button type="button" class="navbar-toggle collapsed"
-						data-toggle="collapse" data-target="#navbar" aria-expanded="false"
-						aria-controls="navbar">
-						<span class="sr-only"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-				</div>
-			</div>
-			<div id="navbar" class="navbar-collapse collapse">
-				<ul class="nav navbar-nav">
-					<li class="dropdown"><a href="<c:url value="/cadastroPizza"/>">Pizzas</a></li>
-					<li class="dropdown"><a href="#" class="dropdown-toggle"
-						data-toggle="dropdown" role="button" aria-haspopup="true"
-						aria-expanded="false"><span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="<c:url value="/menu"/>">Sair</a></li>
-						</ul>
-				</ul>
-			</div>
+		<div class="navbar-header">
+			<a class="navbar-brand" href="<c:url value="/menu"/>">Casa Nova <i
+				class="fas fa-pizza-slice"></i></a>
+			<button type="button" class="navbar-toggle collapsed"
+				data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+				aria-controls="navbar">
+				<span class="sr-only"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span> <span class="icon-bar"></span>
+			</button>
+		</div>
+		<div id="navbar" class="navbar-collapse collapse">
+			<ul class="nav navbar-nav">
+				<li class="dropdown"><a href="<c:url value="/cadastroPizza"/>">Pizzas</a></li>
+				<li class="dropdpwn"><a href="<c:url value="/menu"/>"><i
+						class="fas fa-sign-out-alt"></i> Logout</a></li>
+			</ul>
 		</div>
 	</nav>
-	<div class="container-fluid text-center col-xs-12 col-md-6 col-lg-offset-1 col-lg-4 col-lg-offset-1">
-		<h3>Tamanhos</h3>
+	<div
+		class="col-xs-12 col-md-6 col-lg-offset-1 col-lg-4 col-lg-offset-1">
+		<h3 class="text-center">Novos Tamanhos Pizzas</h3>
+		<form class="col-xs-offset-3" action='<c:url value="/tamanhoPizza/listar"/>' method="post">
+			<input type="hidden" id="codigo" name="codigo" value="${codigo}" /> <br>
+			<label>Tamanho</label>
+			<div class="col-xs-6 form-group input-group">
+				 <input class="form-control" type="text" id="tamanho"
+					name="tamanho" placeholder="Tamanho:" value="${tamanho}" required="required" /><span
+					class="input-group-addon">G</span>
+			</div>
+			<label>Valor</label>
+			<div class="col-xs-6 form-group input-group">
+				<input class="form-control" id="valor" type="text" name="valor"
+					placeholder="Valor:" value="${valor}" required="required" /><span
+					class="input-group-addon">$</span>
+			</div>
+			<div class="form-group">
+				<div class="col-xs-offset-1">
+					<button type="submit" class="btn btn-success btn-sm">Salvar</button>
+				</div>
+			</div>
+			
+		</form>
+	</div>
+	<div
+		class="container-fluid col-xs-12 col-md-6 col-lg-offset-1 col-lg-4 col-lg-offset-1 ">
+		<h3 class="text-center">Lista de Tamanhos</h3>
+		<br>
 		<div class="table-responsive">
 			<table class="table table-striped">
+			<tr>
+				<th class="text-center">Tamanho</th>
+				<th class="text-center">Valor</th>
+			<th class="text-center">Editar</th>
+			<th class="text-center">Excluir</th>
+			</tr>
 				<c:forEach var="t" items="${tamanhos}">
 					<tr>
-						<td>${t.tamanho}</td>
-						<td>${t.valor}</td>
-						<td><a
+						<td class="text-center"><strong>${t.tamanho}</strong></td>
+						<td class="text-center" ><strong>${t.valor}</strong></td>
+						<td class="text-center"><a
 							href="<c:url value = "/tamanhoPizza/editartamanho/${t.codigo}"/>"><button
-									class="btn btn-info btn-sm" id="btnEditar">Editar</button></a></td>
-						<td><a
+									class="btn btn-info btn-sm" id="btnEditar">
+									<i class="far fa-edit"></i>
+								</button></a></td>
+						<td class="text-center"><a
 							href="<c:url value = "/tamanhoPizza/excluirtamanho/${t.codigo}"/>"><button
-									class="btn btn-danger btn-sm" id="btnEditar">Excluir</button></a></td>
+									class="btn btn-danger btn-sm" id="btnEditar">
+									<i class="fas fa-trash-alt"></i>
+								</button></a></td>		
+						
 					</tr>
 				</c:forEach>
 			</table>
 		</div>
 	</div>
-	<div class="col-xs-12 col-md-6 col-lg-offset-1 col-lg-4 col-lg-offset-1">
-		<h4>Tamanhos</h4>
-			<form action='<c:url value="/tamanhoPizza/listar"/>' method="post">
-			<input type="hidden" name="codigo" value="${codigo}" />
-			<div class="form-group">
-				<input type="text" name="tamanho" placeholder="Tamanho:" value="${tamanho}"/>
+	<footer class="col-xs-12 navbar navbar-default alert alert-success" id="rodape">
+   		<br>
+   		<p class="text-center"><strong>Contatos</strong></p>
+   		<div class="row text-center">
+			<div class="col">
+				<h5><a class="nav-link" href="https://www.facebook.com/lucas.berlandinha" ><i class="fab fa-facebook"></i><span> Lucas Berlanda</span></a></h5>
 			</div>
-			<div class="form-group">
-				<input type="text" name="valor" placeholder="Valor:" value="${valor}" />
+			<div class="col">
+				<h5><a class="nav-link" href="https://www.facebook.com/eduardo.santin.378"><i class="fab fa-facebook"></i><span> Eduardo Santin</span></a></h5>
 			</div>
-				<button type="submit" class="btn btn-success btn-sm">Salvar</button>
-			</form>
-	</div>
+			<div class="col">
+				<h5><a class="nav-link" href="https://www.facebook.com/josiel.bueno.1"><i class="fab fa-facebook"></i><span> Josiel Bueno</span></a></h5>
+			</div>
+			<br>
+			<p class=" text-center">
+				<strong><span>© </span><span>2019</span><span> </span><span>Academics</span><span>.
+				</span><span>All Rights Reserved</span></strong>
+			</p>
+		</div>
+    </footer>
 
 	<script src=<c:url value="/resources/js/jquery-1.12.4.min.js"/>></script>
 	<script src=<c:url value="/resources/js/bootstrap.min.js"/>></script>

@@ -86,7 +86,6 @@
 	<div class="finalizar col-xs-12 text-center">
 			<a href="<c:url value="/pedido/finalizar"/>">Finalizar Pedido</a>
 	</div>
-	<c:import url="../header_footer/footer.jsp"></c:import>
 	
 	
 	
