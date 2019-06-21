@@ -17,9 +17,14 @@
 				</ul>
 			</div>
 		</nav>
+		<div>
+			<span>${logado}</span>
+		</div>
 	<div id="pedido" class="col-xs-12 col-sm-12 col-md-8">
 		<h3 class="text-center">Faça seu Pedido</h3>
 		<form action='<c:url value="/pedido/listar"/>' method="post">
+			<% // input para salvar o codigo do usuario %>
+			<input type="hidden" name="usuario_codigo" value="${usuario_codigo}" />
 			<div class="box col-xs-4 col-sm-3 col-md-3 text-center">
 				<h4>Sabores</h4>
 				<select name="sabor" required="required">
@@ -54,7 +59,6 @@
 					</div>
 				</div>
 			</div>
-			<input type="hidden" name="usuario_codigo" value="${usuario_codigo}">
 			<div class="col-xs-12 col-sm-3 col-md-10 text-center">
 				<button type="submit" class="btn btn-info">Adicionar ao
 					Carrinho</button>
@@ -66,18 +70,21 @@
 		<div class="table-responsive">
 			<table class="table table-condensed">
 				<thead>
+					<th class="text-center">Codigo</th>
 					<th class="text-center">Sabores</th>
-					<th class="text-center">Tamanho-Valor</th>
+					<th class="text-center">Tamanho</th>
 					<th class="text-center">Quantidade</th>
-					<th class="text-center">Opções</th>
+					<th class="text-center">Valor</th>
+					<th class="text-center">Opção</th>
 				</thead>
 					<c:forEach var="c" items="${carrinho}">
 						<tr>
+							<td>${c.codigo}</td>
 							<td>${c.sabor}</td>
 							<td>${c.tamanho}</td>
 							<td>${c.quantidade}</td>
-							<td><a href="<c:url value="/pedido/remover/${c.codigo}"/>"><button
-										class="btn btn-danger btn-sm">Remover</button></a></td>
+							<td>${c.valorTotal}</td>
+							<td><a href='<c:url value="/pedido/excluir/${c.codigo}"></c:url>'>Excluir</a></td>
 						</tr>
 					</c:forEach>
 			</table>

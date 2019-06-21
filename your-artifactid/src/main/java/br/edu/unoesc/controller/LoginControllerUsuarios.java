@@ -14,53 +14,53 @@ import br.edu.unoesc.model.Usuario;
 @Controller
 @RequestMapping("/user")
 public class LoginControllerUsuarios {
-	
+
 	@Autowired
 	private UsuarioDAO usuarioDAO;
 
-	
+	private Long idLogado;
+
 	@RequestMapping(path = { "", "/" })
 	public String loginForm() {
 		return "user/login";
 	}
-	
-	@RequestMapping(path=  "/cadastro")
+
+	@RequestMapping(path = "/cadastro")
 	public String cadastro() {
 		return "user/cadastro";
 	}
-	
 
 	@RequestMapping(value = "/valida", method = RequestMethod.POST)
-    public String valida(String email, String senha, Model model) {
-        Usuario usuario = usuarioDAO.findByLoginSenha(email, senha);
-        if (usuario != null) {
-        	model.addAttribute("usuario_codigo", usuario.getCodigo());
-            return "redirect:/pedido";
-        } else {
-        	model.addAttribute("Erro", "Email ou senha Incorreta!");
-            return "user/login";
-        }
-    }
-	
-	@RequestMapping(path=  "/esqueceu")
+	public String valida(String email, String senha, Model model) {
+		Usuario usuario = usuarioDAO.findByLoginSenha(email, senha);
+		if (usuario != null) {
+			setIdLogado(usuario.getCodigo());
+			return "redirect:/pedido";
+		} else {
+			model.addAttribute("Erro", "Email ou senha Incorreta!");
+			return "user/login";
+		}
+	}
+
+	@RequestMapping(path = "/esqueceu")
 	public String esqueceuSenha() {
 		return "user/esqueceu";
 	}
-	
+
 	@RequestMapping(value = "/recuperar", method = RequestMethod.POST)
-    public String recuperar(String email, Model model) {
+	public String recuperar(String email, Model model) {
 		Usuario usuario = usuarioDAO.finByLogin(email);
-		
+
 		Long codigo = usuario.getCodigo();
-		
+
 		String senha = GeraSenha().toString();
 
 		usuarioDAO.updateSenha(senha, codigo);
-		
+
 		return "user/login";
-		
-    }
-	
+
+	}
+
 	public String GeraSenha() {
 		Random gerador = new Random();
 		for (int i = 0; i < 6; i++) {
@@ -68,8 +68,13 @@ public class LoginControllerUsuarios {
 		}
 		return gerador.toString();
 	}
-	
 
-	
- 
+	public Long getIdLogado() {
+		return idLogado;
+	}
+
+	public void setIdLogado(Long idLogado) {
+		this.idLogado = idLogado;
+	}
+
 }

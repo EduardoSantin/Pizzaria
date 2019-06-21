@@ -21,12 +21,9 @@ public class Pedido {
 
 	private double valorTotal;
 
-	// codigo estrangeiro para ver os dados do usuario
 	@ManyToOne
 	private Usuario usuario;
 
-	// criar um codigo estrangeiro para os dados do tamanho para poder pegar o valor
-	// da pizza
 	@ManyToOne
 	private TamanhoPizza tamanhopizza;
 
