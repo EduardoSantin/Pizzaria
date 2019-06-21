@@ -23,7 +23,7 @@
 <body>
 	<nav class="navbar navbar-default fixed">
 		<div class="navbar-header">
-			<a class="navbar-brand" href="<c:url value="/menu"/>">Casa Nova</a>
+			<a class="navbar-brand" href="<c:url value="/menu"/>">Casa Nova <i class="fas fa-pizza-slice"></i> </a>
 			<button type="button" class="navbar-toggle collapsed"
 				data-toggle="collapse" data-target="#navbar" aria-expanded="false"
 				aria-controls="navbar">
