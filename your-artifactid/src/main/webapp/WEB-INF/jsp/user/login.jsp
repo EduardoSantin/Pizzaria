@@ -31,7 +31,7 @@
 					<label for="admin">User</label> 
 					<div class="form-group input-group">
 						<input type="email"
-							class="form-control" id="email" name="User" placeholder="User"
+							class="form-control" id="email" name="email" placeholder="User"
 							required="required"><span class="input-group-addon" id="basic-addon2">ciclano@fulano.com</span>
 					</div>
 					<div class="form-group ">
