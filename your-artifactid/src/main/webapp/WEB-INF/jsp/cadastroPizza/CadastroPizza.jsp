@@ -64,7 +64,7 @@
 	<h3>Lista de Pizzas</h3>
 	<br>
 		<div class="table-responsive">
-			<table class="table table-striped">
+			<table class="table table-hover table-bordered table-striped">
 			<tr>
 				<th class="text-center">Sabores</th>
 				<th class="text-center">Editar</th>

@@ -65,7 +65,7 @@
 		<h3 class="text-center">Lista de Tamanhos</h3>
 		<br>
 		<div class="table-responsive">
-			<table class="table table-striped">
+			<table class="table table-hover table-bordered table-striped">
 			<tr>
 				<th class="text-center">Tamanho</th>
 				<th class="text-center">Valor</th>

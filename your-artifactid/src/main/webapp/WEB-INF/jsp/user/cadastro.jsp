@@ -1,21 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>   
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Cadastro</title>
-	<link rel="stylesheet" href="<c:url value="/resources/css/bootstrap.css"/>">
-</head>
-<body>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+	
+	<c:import url="../header_footer/header.jsp"></c:import>
 	<div class="container bg">	
-		<div class="row center-block">
-			<div class="col-xs-10 col-sm-10"></div>
-			<div class="col-xs-12 col-sm-10">
+		<div class="row jumbotron center-block">
+			<div class="col-xs-12 col-sm-offset-1 col-sm-10">
 				<form class="form-container" action="<c:url value="/usuario/salvar"/>" method="post">
 					<div class="page-header text-center">
-						<h1>Cadastro Usuário</h1>
+						<h2>Cadastro Usuário</h2>
 					</div>
 					<div class="form-group col-xs-4">
 						<label>Nome</label>
@@ -54,7 +45,7 @@
 						<input type="text" class="form-control" id="uf" name="uf" placeholder="Uf" required="required">
 					</div>
 					<div class="text-center">
-						<h3>Seus Dados de Acesso</h3>
+						<ins><h3>Seus Dados de Acesso</h3></ins>
 					</div>
 					<div class="form-group col-xs-8">
 						<label>Email</label>
@@ -67,6 +58,7 @@
 					<div class="col-xs-4">
 						<button type="submit" class="btn btn-success btn-block active">Cadastrar</button>
 					</div>
+					
 				</form>
 			</div>
 		</div>
