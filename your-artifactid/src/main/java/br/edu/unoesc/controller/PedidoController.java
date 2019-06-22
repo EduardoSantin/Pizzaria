@@ -33,8 +33,7 @@ public class PedidoController {
 		model.addAttribute("pizzas", cadastropizzaDao.findAll());
 		model.addAttribute("tamanhos", tamanhopizzaDao.findAll());
 		model.addAttribute("carrinho", Banco.pedidos);
-		// mada para o input para salva mas nao salva
-		model.addAttribute("usuario_codigo", lg.getIdLogado());
+		model.addAttribute("idUsuario", lg.getIdLogado());
 		return "pedido/pedido";
 	}
 
