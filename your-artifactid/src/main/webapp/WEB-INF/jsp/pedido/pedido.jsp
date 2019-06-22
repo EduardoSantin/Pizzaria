@@ -17,13 +17,10 @@
 				</ul>
 			</div>
 		</nav>
-		<div>
-			<span>${logado}</span>
-		</div>
 	<div id="pedido" class="col-xs-12 col-sm-12 col-md-8">
 		<h3 class="text-center">Faça seu Pedido</h3>
 		<form action='<c:url value="/pedido/listar"/>' method="post">
-			<% // input para salvar o codigo do usuario %>
+			<!-- input para salvar o codigo do usuario -->
 			<input type="hidden" name="usuario_codigo" value="${usuario_codigo}" />
 			<div class="box col-xs-4 col-sm-3 col-md-3 text-center">
 				<h4>Sabores</h4>
