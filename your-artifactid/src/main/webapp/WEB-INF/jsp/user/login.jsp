@@ -39,22 +39,18 @@
 							class="form-control" id="senha" name="senha"
 							placeholder="Password" required="required">
 					</div>
-					<div class="checkbox">
-						<label> <input type="checkbox"> Remember me
-						</label>
-					</div>
-					<div class="form-group">
-						<button class="btn btn-default btn-block">
-							<a href="<c:url value="/user/cadastro"/>">Cadastre-se</a>
-						</button>
-					</div>
 					<button type="submit" class="btn btn-success btn-block">Entrar</button>
 				</form>
 			</div>
 		</div>
-		<div class="text-center">
-			<a href="<c:url value="/user/esqueceu"/>">Esqueceu a senha?</a>
-		</div>
+	</div>
+	<div
+		class="col-xs-offset-1 col-xs-5 col-sm-offset-2 col-sm-4 col-md-offset-3 col-md-3 col-lg-offset-4 col-lg-2">
+		<a href="<c:url value="/user/cadastro"/>"><button class="btn btn-default btn-block">Cadastre-se</button></a>
+	</div>
+	<div
+		class="col-xs-5 col-sm-4 col-md-3 col-lg-2">
+		<a href="<c:url value="/user/esqueceu"/>"><button class="btn btn-default btn-block">Esqueceu a Senha?</button></a>
 	</div>
 
 

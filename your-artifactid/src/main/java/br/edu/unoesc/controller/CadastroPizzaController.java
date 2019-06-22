@@ -49,5 +49,11 @@ public class CadastroPizzaController {
 		cadastroPizzaDAO.delete(pizza);
 		return caregar(model);
 	}
+	
+	@RequestMapping(path = "/filtrarPizza", method = RequestMethod.GET)
+	public String filtrarPizza(String filtrarPizza, Model model) {
+		model.addAttribute("pizza", this.cadastroPizzaDAO.listaPizza(filtrarPizza));
+		return "cadastroPizza/CadastroPizza";
+	}
 
 }

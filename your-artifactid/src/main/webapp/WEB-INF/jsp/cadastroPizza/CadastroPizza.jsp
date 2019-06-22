@@ -34,8 +34,18 @@
 			</ul>
 		</div>
 	</nav>
-	
-	<div id="formPizza" class="col-xs-12 col-md-6 col-lg-offset-1 col-lg-4 col-lg-offset-1">
+	<br>
+	<div class="alert alert-success col-xs-offset-1 col-xs-10 col-md-4 col-lg-offset-1 col-lg-4 col-lg-offset-1 ">
+		<form class="col-xs-offset-2" action='<c:url value="/cadastroPizza/filtrarPizza"></c:url>'
+			method="get">
+			<div class="col-xs-6 form-group">
+			 	<input class="form-control" placeholder="Buscar Pizzas.." type="text" name="filtrarPizza">	
+			</div>
+				<button class="btn btn-primary " type="submit">Buscar</button>
+		</form>
+	</div>
+	<br>
+	<div id="formPizza" class="col-xs-12 col-md-7 col-lg-offset-1 col-lg-4 col-lg-offset-1">
 		<h3 class="text-center">Adicionar Nova Pizza</h3>
 		<br>
 		<form class="col-xs-offset-2" action='<c:url value="/cadastroPizza/listar"/>' method="post">
@@ -49,9 +59,8 @@
 			</div>
 		</form>
 	</div>
-
-
-	<div id="pizzas" class="container-fluid text-center col-xs-12 col-md-6 col-lg-6">
+	<br>
+	<div id="pizzas" class="container-fluid text-center col-xs-12 col-md-offset-2 col-md-8">
 	<h3>Lista de Pizzas</h3>
 	<br>
 		<div class="table-responsive">
@@ -75,6 +84,7 @@
 			</table>
 		</div>
 	</div>
-	
+		<script src=<c:url value="/resources/js/jquery-1.12.4.min.js"/>></script>
+	<script src=<c:url value="/resources/js/bootstrap.min.js"/>></script>
 	</body>
 	</html>
