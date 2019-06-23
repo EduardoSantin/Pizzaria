@@ -78,6 +78,7 @@
 						</tr>
 					</c:forEach>
 			</table>
+			<strong>Valor Total: </strong>${total}
 		</div>
 	</div>
 	<div class="finalizar col-xs-12 text-center">

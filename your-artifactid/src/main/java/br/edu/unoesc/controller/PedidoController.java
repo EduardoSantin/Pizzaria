@@ -33,7 +33,9 @@ public class PedidoController {
 		model.addAttribute("pizzas", cadastropizzaDao.findAll());
 		model.addAttribute("tamanhos", tamanhopizzaDao.findAll());
 		model.addAttribute("carrinho", Banco.pedidos);
+		// manda o id do usuario logado para salvar no pedido
 		model.addAttribute("idUsuario", lg.getIdLogado());
+		somarTotal(model);
 		return "pedido/pedido";
 	}
 
@@ -49,12 +51,22 @@ public class PedidoController {
 		pedidoDao.calculaValor(pedido.getCodigo());
 		Banco.pedidos.add(pedidoDao.findByCodigo(pedido.getCodigo()));
 		return caregar(model);
-
+	}
+	
+	private double total;
+	public void somarTotal(Model model) {
+		total = 0;
+		for(int i = 0; i< Banco.pedidos.size(); i++) {
+			Pedido p = Banco.pedidos.get(i);
+			total = total + p.getValorTotal();
+			model.addAttribute("total", total);
+		}
 	}
 
 	@RequestMapping(path = "/finalizar")
 	public String finalizar(Pedido pedido, Model model) {
 		model.addAttribute("carrinho", Banco.pedidos);
+		model.addAttribute("total", total);
 		return "pedido/finalizar";
 	}
 
