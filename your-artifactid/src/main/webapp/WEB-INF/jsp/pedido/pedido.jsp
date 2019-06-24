@@ -12,8 +12,8 @@
 				<ul class="list-inline">
 					<li class="list text-center col-xs-offset-3 col-xs-3">ABERTO
 						AGORA</li>
-					<li class="list text-center col-xs-3 col-xs-offset-3">ENTREGA
-						EM: 30-45 min</li>
+					<li class="list text-center col-xs-3 col-xs-offset-3">Entrega
+						Entre: 45min - 1h</li>
 				</ul>
 			</div>
 		</nav>
@@ -78,9 +78,9 @@
 						</tr>
 					</c:forEach>
 			</table>
-			<strong>Valor Total: </strong>${total}
+			<strong>Valor Total: ${total}</strong>
 		</div>
 	</div>
 	<div class="finalizar col-xs-12 text-center">
-			<a href="<c:url value="/pedido/finalizar"/>">Finalizar Pedido</a>
+			<a href="<c:url value="/pedido/finalizar"/>">Finalizar Pedido / Pagamento</a>
 	</div>
