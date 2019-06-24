@@ -1,5 +1,7 @@
 package br.edu.unoesc.controller;
 
+import java.time.LocalDate;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -46,6 +48,7 @@ public class PedidoController {
 
 	@RequestMapping(path = "/listar", method = RequestMethod.POST)
 	public String listar(Pedido pedido, Model model) {
+		pedido.setDataPedido(LocalDate.now());
 		pedidoDao.saveAndFlush(pedido);
 		pedidoDao.lancarIDTamanho(pedido.getCodigo());
 		pedidoDao.calculaValor(pedido.getCodigo());
