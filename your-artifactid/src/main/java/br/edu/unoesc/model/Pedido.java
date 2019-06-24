@@ -1,9 +1,13 @@
 package br.edu.unoesc.model;
 
+import java.time.LocalDate;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 public class Pedido {
@@ -24,11 +28,14 @@ public class Pedido {
 
 	private Long idTamanho;
 
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private LocalDate data;
+
 	public Pedido() {
 	}
 
 	public Pedido(Long codigo, String sabor, String tamanho, int quantidade, double valorTotal, Long idUsuario,
-			Long idTamanho) {
+			Long idTamanho, LocalDate data) {
 		super();
 		this.codigo = codigo;
 		this.sabor = sabor;
@@ -37,6 +44,7 @@ public class Pedido {
 		this.valorTotal = valorTotal;
 		this.idUsuario = idUsuario;
 		this.idTamanho = idTamanho;
+		this.data = data;
 	}
 
 	public Long getCodigo() {
@@ -94,5 +102,15 @@ public class Pedido {
 	public void setIdTamanho(Long idTamanho) {
 		this.idTamanho = idTamanho;
 	}
+
+	public LocalDate getData() {
+		return data;
+	}
+
+	public void setData(LocalDate data) {
+		this.data = data;
+	}
+
+
 
 }
