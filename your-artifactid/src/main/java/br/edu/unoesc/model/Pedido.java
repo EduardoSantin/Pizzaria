@@ -29,13 +29,13 @@ public class Pedido {
 	private Long idTamanho;
 
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	private LocalDate data;
+	private LocalDate dataPedido;
 
 	public Pedido() {
 	}
 
 	public Pedido(Long codigo, String sabor, String tamanho, int quantidade, double valorTotal, Long idUsuario,
-			Long idTamanho, LocalDate data) {
+			Long idTamanho, LocalDate dataPedido) {
 		super();
 		this.codigo = codigo;
 		this.sabor = sabor;
@@ -44,7 +44,7 @@ public class Pedido {
 		this.valorTotal = valorTotal;
 		this.idUsuario = idUsuario;
 		this.idTamanho = idTamanho;
-		this.data = data;
+		this.dataPedido = dataPedido;
 	}
 
 	public Long getCodigo() {
@@ -103,14 +103,12 @@ public class Pedido {
 		this.idTamanho = idTamanho;
 	}
 
-	public LocalDate getData() {
-		return data;
+	public LocalDate getDataPedido() {
+		return dataPedido;
 	}
 
-	public void setData(LocalDate data) {
-		this.data = data;
+	public void setDataPedido(LocalDate dataPedido) {
+		this.dataPedido = dataPedido;
 	}
-
-
 
 }
