@@ -27,7 +27,7 @@
 
 <div class="container col-xs-12">
 	<form action='<c:url value="/pedido/finalizar"/>' method="post">
-		<h3 class="text-center">Dados Cliente de Finalização</h3>
+		<h3 class="text-center">Dados Do Cliente Para Finalização</h3>
 		<br>
 		<div class="col-xs-offset-1 col-xs-8 col-md-4 text-center form-group">
 			<label>Cliente</label> <input disabled class="form-control"
@@ -54,27 +54,54 @@
 			<br>
 			<div class="col-xs-offset-1 col-xs-8 col-md-4 text-center form-group">
 				<label>Endereço</label> <input class="form-control" type="text"
-					name="endereço" placeholder="Endereço" value="${c.endereco}" />
+					name="endereço" placeholder="Endereço" value="${c.endereco}" required="required" />
 			</div>
 			<div class="col-xs-offset-1 col-xs-8 col-md-4 text-center form-group">
 				<label>Bairro</label> <input class="form-control" type="text"
-					name="bairro" placeholder="Bairro" value="${c.bairro}" />
+					name="bairro" placeholder="Bairro" value="${c.bairro}" required="required"/>
 			</div>
 			<div class="col-xs-offset-1 col-xs-8 col-md-4 text-center form-group">
 				<label>Cidade</label> <input class="form-control" type="text"
-					name="cidade" placeholder="Cidade" value="${c.cidade}" />
+					name="cidade" placeholder="Cidade" value="${c.cidade}" required="required" />
 			</div>
 			<div class="col-xs-offset-1 col-xs-8 col-md-4 text-center form-group">
 				<label>Complemento</label> <input class="form-control" type="text"
-					name="complemento" placeholder="Complemento" />
+					name="complemento" placeholder="Complemento"/>
 			</div>
+			
 			<br>
 		</div>
 		<div class="col-xs-offset-1 col-xs-8 text-center">
 			<br>
-			<button type="submit" class="btn btn-info ">Finalizar/Salvar Pedido</button>
+			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Salvar Pedido</button>
 		</div>
+		<div class="col-xs-offset-1 col-xs-8 text-center">
+			<br>
+			<button type="submit" class="btn btn-success">
+			<a style="text-decoration: none; color: white" href="<c:url value="/menu"/>">Enviar Pedido</a></button>
+		</div>	 
 	</form>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Sucesso</h4>
+      </div>
+      <div class="modal-body">
+        <h4>Seu Pedido foi enviado com Sucesso!</h4>
+        <label>Obrigado pela preferencia!</label>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-info" data-dismiss="modal">Confirmar</button>
+        
+      </div>
+    </div>
+  </div>
 </div>
 
 

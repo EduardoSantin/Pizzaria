@@ -17,7 +17,7 @@
 				</ul>
 			</div>
 		</nav>
-	<div id="pedido" class="col-xs-12 col-sm-12 col-md-8">
+	<div id="pedido" class="col-xs-offset-1 col-xs-10 col-sm-12 col-md-offset-0 col-md-6">
 		<h3 class="text-center">Faça seu Pedido</h3>
 		<form action='<c:url value="/pedido/listar"/>' method="post">
 			<!-- input para salvar o codigo do usuario -->
@@ -48,13 +48,16 @@
 						min="1" name="quantidade" >	
 				</div>
 			</div>
-			<div class="col-xs-12 col-sm-3 col-md-10 text-center">
+			<br>
+			<br>
+			<br>
+			<div class="col-xs-12 col-md-10 text-center">
 				<button type="submit" class="btn btn-info">Adicionar ao
 					Carrinho</button>
 			</div>
 		</form>
 	</div>
-	<div class="container col-xs-12 col-sm-10 col-md-4">
+	<div class="container col-xs-12 col-sm-10 col-md-6">
 		<h3 class="carrinho text-center">Seu Carrinho</h3>
 		<div class="table-responsive">
 			<table class="table table-hover table-bordered table-striped">
@@ -82,5 +85,8 @@
 		</div>
 	</div>
 	<div class="finalizar col-xs-12 text-center">
-			<a href="<c:url value="/pedido/finalizar"/>">Finalizar Pedido / Pagamento</a>
+	<br>
+	<br>
+		<button type="submit" class="btn btn-success">
+			<a style="text-decoration: none; color: white" href="<c:url value="/pedido/finalizar"/>">Pagamento/Finalizar</a></button>
 	</div>
