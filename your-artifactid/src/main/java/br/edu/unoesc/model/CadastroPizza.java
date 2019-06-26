@@ -9,7 +9,7 @@ import javax.persistence.Id;
 public class CadastroPizza {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigo;
 	private String nome;
 

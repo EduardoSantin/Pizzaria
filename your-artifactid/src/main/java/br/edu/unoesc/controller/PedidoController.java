@@ -11,9 +11,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import br.edu.unoesc.banco.Banco;
 import br.edu.unoesc.dao.CadastroPizzaDAO;
+import br.edu.unoesc.dao.EntregaDAO;
 import br.edu.unoesc.dao.PedidoDAO;
 import br.edu.unoesc.dao.TamanhoPizzaDAO;
 import br.edu.unoesc.dao.UsuarioDAO;
+import br.edu.unoesc.model.Entrega;
 import br.edu.unoesc.model.Pedido;
 import br.edu.unoesc.model.Usuario;
 
@@ -35,6 +37,9 @@ public class PedidoController {
 	
 	@Autowired
 	private LoginControllerUsuarios lg;
+	
+	@Autowired
+	private EntregaDAO entregaDao;
 
 	private String caregar(Model model) {
 		model.addAttribute("pizzas", cadastropizzaDao.findAll());
@@ -71,21 +76,6 @@ public class PedidoController {
 		}
 	}
 	
-	@RequestMapping(path = "/finalizar")
-	public String finalizar(Pedido pedido, Model model) {
-		Usuario usuario = userDao.retornaUsuario(lg.getIdLogado());
-		model.addAttribute("carrinho", Banco.pedidos);
-		model.addAttribute("total", total);
-		model.addAttribute("pedido", pedido.getIdUsuario());
-		System.out.println(usuario.getNome());
-		model.addAttribute("nome", usuario.getNome());
-		model.addAttribute("cpf", usuario.getCpf());
-		model.addAttribute("endereco", usuario.getEndereco());
-		model.addAttribute("bairro", usuario.getBairro());
-		model.addAttribute("cidade", usuario.getCidade());
-		return "pedido/finalizar";
-	}
-
 	@RequestMapping(path = "/excluir/{codigo}", method = RequestMethod.GET)
 	public String excluir(@PathVariable(name = "codigo") Long codigo, Model model) {
 		for (int i = 0; i < Banco.pedidos.size(); i++) {
@@ -101,5 +91,40 @@ public class PedidoController {
 		}
 		return caregar(model);
 	}
-
+	
+	@RequestMapping(path = "/finalizar")
+	public String finalizar(Pedido pedido, Model model) {
+		Usuario usuario = userDao.retornaUsuario(lg.getIdLogado());
+		model.addAttribute("carrinho", Banco.pedidos);
+		model.addAttribute("total", total);
+		model.addAttribute("nome", usuario.getNome());
+		model.addAttribute("cpf", usuario.getCpf());
+		model.addAttribute("endereco", usuario.getEndereco());
+		model.addAttribute("bairro", usuario.getBairro());
+		model.addAttribute("cidade", usuario.getCidade());
+		model.addAttribute("numero", usuario.getNumero());
+		return "pedido/finalizar";
+	}
+	
+	private Long comparaCodigo = 0l;
+	@RequestMapping(path = "/finalizarEntrega", method = RequestMethod.POST)
+	public String finalizarEntrega(Entrega entrega, Model model) {
+		for (int i = 0; i < Banco.pedidos.size(); i++) {
+			Pedido p = Banco.pedidos.get(i);
+				entrega.setCodigoPedido(p.getCodigo());
+				if(comparaCodigo.equals(0l)) {
+					entregaDao.saveAndFlush(entrega);
+					entregaDao.salvaStatusEntrega(entrega.getCodigo());	
+					comparaCodigo = entrega.getCodigo();
+				}else {
+					comparaCodigo = comparaCodigo + 1;
+					entrega.setCodigo(comparaCodigo);
+					entregaDao.saveAndFlush(entrega);
+					entregaDao.salvaStatusEntrega(entrega.getCodigo());
+				}
+		}
+		Banco.pedidos.clear();
+		return "menu/menu";
+	}
+	
 }

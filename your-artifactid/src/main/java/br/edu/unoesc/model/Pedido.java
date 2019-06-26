@@ -13,7 +13,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 public class Pedido {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigo;
 
 	private String sabor;
