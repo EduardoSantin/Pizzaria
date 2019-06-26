@@ -11,11 +11,13 @@ import br.edu.unoesc.model.Pedido;
 
 public interface PedidoDAO extends JpaRepository<Pedido, Long> {
 		
+	Pedido findByCodigo(Long codigo);
+	
 	@Query("select pedido from Pedido pedido where dataPedido = ?1")
 	List<Pedido> findByData(LocalDate data);
 	
 	@Query("select pedido from Pedido pedido where codigo = ?1")
-	List<Pedido> findByCodigo(Long codigo);
+	List<Pedido> findByCodigoFiltrado(Long codigo);
 	
 	@Procedure
 	void lancarIDTamanho(Long codigo);

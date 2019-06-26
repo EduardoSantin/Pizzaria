@@ -45,7 +45,7 @@ public class EntregaController {
 	
 	@RequestMapping(path = "/filtrapedidos/{codigo}", method = RequestMethod.GET)
 	public String filtrapedidos(@PathVariable(name = "codigo") Long codigo, Model model) {
-		model.addAttribute("pedidos", pedidoDao.findByCodigo(codigo));
+		model.addAttribute("pedidos", pedidoDao.findByCodigoFiltrado(codigo));
 		return "entregas/pedidos";
 	}
 }
