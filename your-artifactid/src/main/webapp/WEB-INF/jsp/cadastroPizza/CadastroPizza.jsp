@@ -29,6 +29,7 @@
 		</div>
 		<div id="navbar" class="navbar-collapse collapse">
 			<ul class="nav navbar-nav">
+				<li class="dropdown"><a href="<c:url value="/entregas"/>"> Entregas</a></li>
 				<li class="dropdown"><a href="<c:url value="/tamanhoPizza"/>"> Tamanhos Pizzas</a></li>
 				<li class="dropdpwn"><a href="<c:url value="/menu"/>"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
 			</ul>

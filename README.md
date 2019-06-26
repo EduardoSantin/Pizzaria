@@ -60,3 +60,18 @@ begin
 end$
 
 delimiter ;
+
+
+-- procedure para salvar status pendente de entrega
+
+delimiter $
+
+create procedure salvaStatusEntrega(IN _codigo bigint(20))
+
+begin
+    
+	update entrega set status = 'pendente' where codigo = _codigo;
+
+end$
+
+delimiter ;
