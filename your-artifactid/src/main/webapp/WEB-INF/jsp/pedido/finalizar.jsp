@@ -1,4 +1,7 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <script src=<c:url value="/resources/js/escondeDiv.js"/>></script>
 <c:import url="../header_footer/header.jsp"></c:import>
 
@@ -27,22 +30,22 @@
 
 <div class="container col-xs-12">
 	<form action='<c:url value="/pedido/finalizar"/>' method="post">
-		<h3 class="text-center">Dados Do Cliente Para Finalização</h3>
+		<h3 class="text-center">Dados Do Cliente Para FinalizaÃ§Ã£o</h3>
 		<br>
 		<div class="col-xs-offset-1 col-xs-8 col-md-4 text-center form-group">
 			<label>Cliente</label> <input disabled class="form-control"
-				type="text" name="nome" placeholder="Cliente" value="${c.nome}" />
+				type="text" name="nome" placeholder="Cliente" value="${nome}" />
 		</div>
 		<div class="col-xs-offset-1 col-xs-8 col-md-4 text-center form-group">
 			<label>CPF</label> <input disabled class="form-control" type="text"
-				name="cpf" placeholder="Cpf" value="${c.cpf}" />
+				name="cpf" placeholder="Cpf"  value="${cpf}"/>
 		</div>
 		<div class="col-xs-offset-1 col-xs-8 col-md-4 text-center">
-			<label>Opções de pagamento</label> <select class="form-control"
+			<label>OpÃ§Ãµes de pagamento</label> <select class="form-control"
 				name="sabor" required>
 				<option disabled selected="selected" value="">Selecione</option>
 				<option id="dinheiro" value="dinheiro">Dinheiro</option>
-				<option id="cartao" value="cartao">Cartão</option>
+				<option id="cartao" value="cartao">CartÃ£o</option>
 			</select>
 		</div>
 		<div class="col-xs-offset-1 col-xs-8 col-md-4 radio text-center">
@@ -53,16 +56,16 @@
 		<div id="opcao">
 			<br>
 			<div class="col-xs-offset-1 col-xs-8 col-md-4 text-center form-group">
-				<label>Endereço</label> <input class="form-control" type="text"
-					name="endereço" placeholder="Endereço" value="${c.endereco}" required="required" />
+				<label>EndereÃ§o</label> <input class="form-control" type="text"
+					name="endereÃ§o" placeholder="EndereÃ§o" value="<c:out value="${endereco}"/>" required="required" />
 			</div>
 			<div class="col-xs-offset-1 col-xs-8 col-md-4 text-center form-group">
 				<label>Bairro</label> <input class="form-control" type="text"
-					name="bairro" placeholder="Bairro" value="${c.bairro}" required="required"/>
+					name="bairro" placeholder="Bairro" value="${bairro}" required="required"/>
 			</div>
 			<div class="col-xs-offset-1 col-xs-8 col-md-4 text-center form-group">
 				<label>Cidade</label> <input class="form-control" type="text"
-					name="cidade" placeholder="Cidade" value="${c.cidade}" required="required" />
+					name="cidade" placeholder="Cidade" value="${cidade}" required="required" />
 			</div>
 			<div class="col-xs-offset-1 col-xs-8 col-md-4 text-center form-group">
 				<label>Complemento</label> <input class="form-control" type="text"

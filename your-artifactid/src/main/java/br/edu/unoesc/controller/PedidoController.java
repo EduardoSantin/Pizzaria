@@ -13,7 +13,9 @@ import br.edu.unoesc.banco.Banco;
 import br.edu.unoesc.dao.CadastroPizzaDAO;
 import br.edu.unoesc.dao.PedidoDAO;
 import br.edu.unoesc.dao.TamanhoPizzaDAO;
+import br.edu.unoesc.dao.UsuarioDAO;
 import br.edu.unoesc.model.Pedido;
+import br.edu.unoesc.model.Usuario;
 
 @Controller
 @RequestMapping("/pedido")
@@ -28,6 +30,9 @@ public class PedidoController {
 	@Autowired
 	private PedidoDAO pedidoDao;
 
+	@Autowired
+	private UsuarioDAO userDao;
+	
 	@Autowired
 	private LoginControllerUsuarios lg;
 
@@ -68,8 +73,16 @@ public class PedidoController {
 
 	@RequestMapping(path = "/finalizar")
 	public String finalizar(Pedido pedido, Model model) {
+		Usuario usuario = userDao.retornaUsuario(lg.getIdLogado());
 		model.addAttribute("carrinho", Banco.pedidos);
 		model.addAttribute("total", total);
+		model.addAttribute("pedido", pedido.getIdUsuario());
+		System.out.println(usuario.getNome());
+		model.addAttribute("nome", usuario.getNome());
+		model.addAttribute("cpf", usuario.getNome());
+		model.addAttribute("endereco", usuario.getNome());
+		model.addAttribute("bairro", usuario.getBairro());
+		model.addAttribute("cidade", usuario.getCidade());
 		return "pedido/finalizar";
 	}
 
