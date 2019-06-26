@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+<meta charset="ISO-8859-1">
 <title>Menu</title>
 <link rel="stylesheet"
 	href="<c:url value="/resources/css/bootstrap.css"/>">
@@ -37,8 +37,8 @@
 					data-toggle="dropdown" role="button" aria-haspopup="true"
 					aria-expanded="false">Pedido<span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li><a href="<c:url value="/user"/>">Novo Pedido</a></li>
-						<li><a href="#destaque">Destaques</a></li>
+						<li><a href="<c:url value="/user"/>"><i class="far fa-list-alt"></i> Novo Pedido</a></li>
+						<li><a href="#destaque"><i class="fas fa-sort-amount-up"></i> Destaques</a></li>
 					</ul></li>
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown" role="button" aria-haspopup="true"
@@ -54,7 +54,6 @@
 					data-toggle="dropdown" role="button" aria-haspopup="true"
 					aria-expanded="false">Outros <span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li><a href="#">Sobre Nós</a></li>
 						<li><a href="<c:url value="/login"/>"><i
 								class="fas fa-user-tie"></i> Login Adm</a></li>
 					</ul></li>
@@ -253,12 +252,17 @@
 			</div>
 		</div>
 		<div class="row  social-container">
-			<div class="col">
-				<a class="social-inner" href="#"><i class="fab fa-facebook"></i><span>Facebook</span></a>
+			<div class="col text-center" >
+				<a class="nav-link" href="https://www.facebook.com/eduardo.santin.378"><i class="fab fa-facebook"></i><span> Eduardo Santin</span></a>
 			</div>
-			<div class="col">
-				<a class="social-inner" href="#"><i class="fab fa-instagram"></i><span>instagram</span></a>
+			<div class="col text-center">
+				<a class="nav-link" href="https://www.facebook.com/josiel.bueno.1"><i class="fab fa-facebook"></i><span> Josiel Bueno</span></a>
 			</div>
+			<div class="col text-center">
+				<a class="nav-link" href="https://www.facebook.com/lucas.berlandinha" ><i class="fab fa-facebook"></i><span> Lucas Berlanda</span></a>
+			</div>
+			
+			
 			<p class="rights text-center">
 				<span>© </span><span>2019</span><span> </span><span>Academics</span><span>.
 				</span><span>All Rights Reserved.</span>

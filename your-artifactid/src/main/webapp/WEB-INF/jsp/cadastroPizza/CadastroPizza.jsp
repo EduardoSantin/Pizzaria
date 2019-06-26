@@ -84,6 +84,9 @@
 			</table>
 		</div>
 	</div>
+	
+	<c:import url="../header_footer/footer.jsp"></c:import>
+	
 		<script src=<c:url value="/resources/js/jquery-1.12.4.min.js"/>></script>
 	<script src=<c:url value="/resources/js/bootstrap.min.js"/>></script>
 	</body>

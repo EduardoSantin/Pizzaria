@@ -84,9 +84,10 @@
 			<strong>Valor Total: ${total}</strong>
 		</div>
 	</div>
-	<div class="finalizar col-xs-12 text-center">
-	<br>
+	<div class="finalizar col-xs-12 text-center" style="margin-bottom: 20px;">
 	<br>
 		<button type="submit" class="btn btn-success">
-			<a style="text-decoration: none; color: white" href="<c:url value="/pedido/finalizar"/>">Pagamento/Finalizar</a></button>
+			<a style="text-decoration: none; color: white;" href="<c:url value="/pedido/finalizar"/>">Pagamento/Finalizar</a></button>
+	<br>
 	</div>
+	<c:import url="../header_footer/footer.jsp"></c:import>

@@ -70,7 +70,7 @@ public class PedidoController {
 			model.addAttribute("total", total);
 		}
 	}
-
+	
 	@RequestMapping(path = "/finalizar")
 	public String finalizar(Pedido pedido, Model model) {
 		Usuario usuario = userDao.retornaUsuario(lg.getIdLogado());
@@ -79,8 +79,8 @@ public class PedidoController {
 		model.addAttribute("pedido", pedido.getIdUsuario());
 		System.out.println(usuario.getNome());
 		model.addAttribute("nome", usuario.getNome());
-		model.addAttribute("cpf", usuario.getNome());
-		model.addAttribute("endereco", usuario.getNome());
+		model.addAttribute("cpf", usuario.getCpf());
+		model.addAttribute("endereco", usuario.getEndereco());
 		model.addAttribute("bairro", usuario.getBairro());
 		model.addAttribute("cidade", usuario.getCidade());
 		return "pedido/finalizar";

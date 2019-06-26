@@ -50,7 +50,7 @@
 	</div>
 	<div
 		class="col-xs-5 col-sm-4 col-md-3 col-lg-2">
-		<a href="<c:url value="/user/esqueceu"/>"><button class="btn btn-default btn-block">Esqueceu a Senha?</button></a>
+		<a href="<c:url value=""/>"><button class="btn btn-default btn-block">Esqueceu a Senha?</button></a>
 	</div>
 
 

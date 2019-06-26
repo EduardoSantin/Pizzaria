@@ -35,8 +35,8 @@
 					data-toggle="dropdown" role="button" aria-haspopup="true"
 					aria-expanded="false">Pedido<span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li><a href="<c:url value="/user"/>">Novo Pedido</a></li>
-						<li><a href="#destaque">Destaques</a></li>
+						<li><a href="<c:url value="/user"/>"> <i class="far fa-list-alt"></i> Novo Pedido</a></li>
+						<li><a href="<c:url value="/menu#destaque"/>"><i class="fas fa-sort-amount-up"></i> Destaques</a></li>
 					</ul></li>
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown" role="button" aria-haspopup="true"
@@ -51,7 +51,6 @@
 					data-toggle="dropdown" role="button" aria-haspopup="true"
 					aria-expanded="false">Outros <span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li><a href="#rodape">Sobre Nós</a></li>
 						<li><a href="<c:url value="/login"/>"><i
 								class="fas fa-user-tie"></i> Login Adm</a></li>
 					</ul></li>

@@ -85,34 +85,15 @@
 							href="<c:url value = "/tamanhoPizza/excluirtamanho/${t.codigo}"/>"><button
 									class="btn btn-danger btn-sm" id="btnEditar">
 									<i class="fas fa-trash-alt"></i>
-								</button></a></td>		
+								</button></a></td>
 						
 					</tr>
 				</c:forEach>
 			</table>
 		</div>
 	</div>
-	<footer class="col-xs-12 navbar navbar-default alert alert-success" id="rodape">
-   		<br>
-   		<p class="text-center"><strong>Contatos</strong></p>
-   		<div class="row text-center">
-			<div class="col">
-				<h5><a class="nav-link" href="https://www.facebook.com/lucas.berlandinha" ><i class="fab fa-facebook"></i><span> Lucas Berlanda</span></a></h5>
-			</div>
-			<div class="col">
-				<h5><a class="nav-link" href="https://www.facebook.com/eduardo.santin.378"><i class="fab fa-facebook"></i><span> Eduardo Santin</span></a></h5>
-			</div>
-			<div class="col">
-				<h5><a class="nav-link" href="https://www.facebook.com/josiel.bueno.1"><i class="fab fa-facebook"></i><span> Josiel Bueno</span></a></h5>
-			</div>
-			<br>
-			<p class=" text-center">
-				<strong><span>© </span><span>2019</span><span> </span><span>Academics</span><span>.
-				</span><span>All Rights Reserved</span></strong>
-			</p>
-		</div>
-    </footer>
-
+	<c:import url="../header_footer/footer.jsp"></c:import>
+	
 	<script src=<c:url value="/resources/js/jquery-1.12.4.min.js"/>></script>
 	<script src=<c:url value="/resources/js/bootstrap.min.js"/>></script>
 </body>

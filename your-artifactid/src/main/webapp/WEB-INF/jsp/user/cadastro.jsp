@@ -18,7 +18,7 @@
 					</div>
 					<div class="form-group col-xs-4">
 						<label>CPF</label>
-						<input type="text" class="form-control" id="cpf" name="cpf" placeholder="CPF" required="required">
+						<input type="text" class="form-control" id="cpf" name="cpf" placeholder="987.654.321-35" required="required">
 					</div>
 					<div class="form-group col-xs-3">
 						<label>Telefone</label>
@@ -63,6 +63,5 @@
 			</div>
 		</div>
 	</div>
-
 </body>
 </html>
