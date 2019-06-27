@@ -36,13 +36,13 @@
 		</div>
 	</nav>
 	<br>
-	<div class="alert alert-success col-xs-offset-1 col-xs-10 col-md-4 col-lg-offset-1 col-lg-4 col-lg-offset-1 ">
+	<div class=" col-xs-offset-1 col-xs-8 col-md-4 col-lg-offset-2 col-lg-4 col-lg-offset-1 ">
 		<form class="col-xs-offset-2" action='<c:url value="/cadastroPizza/filtrarPizza"></c:url>'
 			method="get">
 			<div class="col-xs-6 form-group">
-			 	<input class="form-control" placeholder="Buscar Pizzas.." type="text" name="filtrarPizza">	
+			 	<input class="form-control" placeholder="Pizzas.." type="text" name="filtrarPizza">	
 			</div>
-				<button class="btn btn-primary " type="submit">Buscar</button>
+				<button class="btn btn-primary " type="submit"><i class="fas fa-search"></i> Buscar</button>
 		</form>
 	</div>
 	<br>

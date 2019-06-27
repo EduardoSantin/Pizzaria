@@ -6,7 +6,7 @@
 			<div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6 ">
 				<form class="form-container" action="<c:url value="/login/acessar"/>"  method="post">
 					<div class="page-header text-center">
-						<h1>Administração</h1>
+						<h1>Administração <i class="fas fa-user-tie"></i></h1>
 						<c:if test="${Erro != null}" >
 							<span class="alert" style="color:red;">
 							<i class="fas fa-exclamation-triangle"></i>

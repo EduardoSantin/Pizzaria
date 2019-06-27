@@ -6,7 +6,7 @@
 			<div class="col-xs-12 col-sm-offset-1 col-sm-10">
 				<form class="form-container" action="<c:url value="/usuario/salvar"/>" method="post">
 					<div class="page-header text-center">
-						<h2>Cadastro Usuário</h2>
+						<h2>Cadastro Usuário <i class="fas fa-user-alt"></i></h2>
 					</div>
 					<div class="form-group col-xs-4">
 						<label>Nome</label>

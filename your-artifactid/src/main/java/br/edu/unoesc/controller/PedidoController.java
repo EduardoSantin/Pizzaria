@@ -63,6 +63,7 @@ public class PedidoController {
 		pedidoDao.lancarIDTamanho(pedido.getCodigo());
 		pedidoDao.calculaValor(pedido.getCodigo());
 		Banco.pedidos.add(pedidoDao.findByCodigo(pedido.getCodigo()));
+		
 		return caregar(model);
 	}
 	

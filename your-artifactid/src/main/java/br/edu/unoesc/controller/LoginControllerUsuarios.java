@@ -35,6 +35,7 @@ public class LoginControllerUsuarios {
 		Usuario usuario = usuarioDAO.findByLoginSenha(email, senha);
 		if (usuario != null) {
 			setIdLogado(usuario.getCodigo());
+			model.addAttribute("nome", usuario.getNome());
 			return "redirect:/pedido";
 		} else {
 			model.addAttribute("Erro", "Email ou senha Incorreta!");

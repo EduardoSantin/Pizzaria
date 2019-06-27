@@ -17,7 +17,7 @@
 				</ul>
 			</div>
 		</nav>
-	<div id="pedido" class="col-xs-offset-1 col-xs-10 col-sm-12 col-md-offset-0 col-md-6">
+	<div id="pedido" class="col-xs-offset-1 col-xs-10 col-sm-offset-2 col-md-offset-2 col-md-10 col-lg-offset-1 col-lg-6">
 		<h3 class="text-center">Faça seu Pedido</h3>
 		<form action='<c:url value="/pedido/listar"/>' method="post">
 			<!-- input para salvar o codigo do usuario -->
@@ -52,12 +52,12 @@
 			<br>
 			<br>
 			<div class="col-xs-12 col-md-10 text-center">
-				<button type="submit" class="btn btn-info">Adicionar ao
+				<button type="submit" class="btn btn-info"><i class="fas fa-cart-arrow-down"></i> Adicionar ao
 					Carrinho</button>
 			</div>
 		</form>
 	</div>
-	<div class="container col-xs-12 col-sm-10 col-md-6">
+	<div class="col-xs-offset-1 col-xs-10 col-md-offset-1 col-md-10 col-lg-offset-0 col-lg-5">
 		<h3 class="carrinho text-center">Seu Carrinho</h3>
 		<div class="table-responsive">
 			<table class="table table-hover table-bordered table-striped">
@@ -85,9 +85,9 @@
 		</div>
 	</div>
 	<div class="finalizar col-xs-12 text-center" style="margin-bottom: 20px;">
-	<br>
+		<br>
 		<button type="submit" class="btn btn-success">
-			<a style="text-decoration: none; color: white;" href="<c:url value="/pedido/finalizar"/>">Pagamento/Finalizar</a></button>
-	<br>
+			<a style="text-decoration: none; color: white;" href="<c:url value="/pedido/finalizar"/>"><i class="fas fa-map-marked-alt"></i> Endereço</a></button>
+		<br>
 	</div>
 	<c:import url="../header_footer/footer.jsp"></c:import>

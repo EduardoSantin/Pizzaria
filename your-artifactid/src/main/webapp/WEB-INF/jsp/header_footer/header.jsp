@@ -54,7 +54,7 @@
 						<li><a href="<c:url value="/login"/>"><i
 								class="fas fa-user-tie"></i> Login Adm</a></li>
 					</ul></li>
-				<li class="dropdown"><a href="#contato">Contato</a></li>
+				<li class="dropdown"><a href="<c:url value="/menu#contato"/>">Contato</a></li>
 			</ul>
 		</div>
 	</nav>

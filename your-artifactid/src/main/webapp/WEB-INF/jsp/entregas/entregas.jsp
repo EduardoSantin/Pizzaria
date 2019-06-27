@@ -45,8 +45,7 @@
 		</div>
 	</nav>
 
-	<div
-		class="container-fluid text-center col-xs-12 col-md-offset-2 col-md-8">
+	<div class="container-fluid text-center col-xs-12 col-md-offset-2 col-md-8" style="min-height: 280px; margin-bottom:0;">
 		<h3>Entregas Pendentes</h3>
 		<br>
 		<div class="table-responsive">
@@ -79,9 +78,7 @@
 			</table>
 		</div>
 	</div>
-
 	<c:import url="../header_footer/footer.jsp"></c:import>
-
 	<script src=<c:url value="/resources/js/jquery-1.12.4.min.js"/>></script>
 	<script src=<c:url value="/resources/js/bootstrap.min.js"/>></script>
 </body>

@@ -1,4 +1,4 @@
-<footer class="col-xs-12 navbar navbar-default alert alert-default" id="rodape" style="margin-bottom: 0px;">
+<footer class="col-xs-12 navbar navbar-default" id="rodape" style="margin-bottom:0px; margin-top: 20px;">
    		<br>
    		<p class="text-center"><strong>Contatos</strong></p>
    		<hr>
